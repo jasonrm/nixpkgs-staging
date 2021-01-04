@@ -1,5 +1,6 @@
 { pkgs ? import <nixpkgs> {} }:
 {
+  lossless-cut = pkgs.callPackage ./pkgs/applications/video/lossless-cut {};
 
   migrant = pkgs.callPackage ./pkgs/development/tools/migrant {};
 
