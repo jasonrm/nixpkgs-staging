@@ -1,9 +1,9 @@
 { lib
 , pkgs
-, python3Packages
+, python36Packages
 , fetchFromGitHub
 }:
-python3Packages.buildPythonPackage rec {
+python36Packages.buildPythonPackage rec {
   pname = "imapbox";
   version = "120513e";
 
@@ -16,10 +16,10 @@ python3Packages.buildPythonPackage rec {
   };
 
   buildPhase = ''
-    ${python3Packages.python.interpreter} -O -m compileall .
+    ${python36Packages.python.interpreter} -O -m compileall .
   '';
 
-  propagatedBuildInputs = with python3Packages; [
+  propagatedBuildInputs = with python36Packages; [
     six
     chardet
     pdfkit
@@ -37,7 +37,7 @@ python3Packages.buildPythonPackage rec {
   postFixup = ''
     makeWrapper "$out/share/imapbox.py" "$out/bin/imapbox" \
       --set PYTHONPATH "$PYTHONPATH" \
-      --set PATH ${python3Packages.python}/bin
+      --set PATH ${python36Packages.python}/bin
   '';
 
   meta = with lib; {
