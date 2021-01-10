@@ -6,17 +6,17 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "bupstash";
-  version = "v0.6.2";
+  version = "v0.6.4";
 
   src = fetchFromGitHub {
     owner = "andrewchambers";
     repo = pname;
     rev = version;
-    sha256 = "1s1f5iyasx86c76f38bx13h6c9l3cbdzwi4r5l5ddsiq9raj4l0z";
+    sha256 = "013k8pr4865f5rp66fjf3a8069kmd29brxv0l20z571gy2kxs5p9";
     # sha256 = lib.fakeSha256;
   };
 
-  cargoSha256 = "16k9fjn9k2hhk2iqf1bpmklba9181v192026m5s9aspqhgifzbyb";
+  cargoSha256 = "06ks8crggc7qjqx3llp0mrxn62f6frwfl13fyawg77z0g6wp293y";
   # cargoSha256 = lib.fakeSha256;
 
   nativeBuildInputs = [ pkg-config ];
