@@ -10,5 +10,7 @@
   imaptar = pkgs.callPackage ./pkgs/tools/backup/imaptar {};
   imapbox = pkgs.callPackage ./pkgs/tools/backup/imapbox {};
 
+  manticoresearch = pkgs.callPackage ./pkgs/servers/search/manticoresearch {};
+
   supervisord-go = pkgs.callPackage ./pkgs/tools/system/supervisord-go {};
 }
