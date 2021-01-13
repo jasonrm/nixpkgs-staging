@@ -58,7 +58,7 @@ stdenv.mkDerivation rec {
   postFixup = ''
     makeWrapper ${electron}/bin/electron $out/bin/${pname} \
       --add-flags "$out/share/${pname}/resources --without-update"
-   '';
+  '';
 
   meta = with stdenv.lib; {
     description = "The swiss army knife of lossless video/audio editing";
