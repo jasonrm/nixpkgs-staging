@@ -51,14 +51,6 @@ stdenv.mkDerivation rec {
     expat
   ];
 
-  # CXXFLAGS = with stdenv.lib; concatStringsSep " " (optionals stdenv.isDarwin [
-  #   # see upstream bug: http://sphinxsearch.com/bugs/view.php?id=2578
-  #   # workaround for "error: invalid suffix on literal
-  #   "-Wno-reserved-user-defined-literal"
-  #   # workaround for "error: non-constant-expression cannot be narrowed from type 'long' to 'int'"
-  #   "-Wno-c++11-narrowing"
-  # ]);
-
   meta = {
     description = "Open source text search engine for big data and stream filtering";
     homepage = "https://manticoresearch.com/";
