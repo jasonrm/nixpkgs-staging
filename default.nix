@@ -11,6 +11,7 @@
   imapbox = pkgs.callPackage ./pkgs/tools/backup/imapbox { };
 
   manticoresearch = pkgs.callPackage ./pkgs/servers/search/manticoresearch { };
+  imageproxy = pkgs.callPackage ./pkgs/servers/imageproxy { };
 
   supervisord-go = pkgs.callPackage ./pkgs/tools/system/supervisord-go { };
 }
