@@ -1,9 +1,11 @@
-{ lib
+{ stdenv
+, lib
 , fetchFromGitHub
 , rustPlatform
 , postgresql
 , sqlite
 , mariadb
+, darwin
 }:
 rustPlatform.buildRustPackage rec {
   pname = "migrant";
@@ -20,7 +22,11 @@ rustPlatform.buildRustPackage rec {
   cargoSha256 = "1zhc5568p538kkb2i7q26agiqbqnh3fj23q2h79v30fqyjbrb1ms";
   # cargoSha256 = lib.fakeSha256;
 
-  buildInputs = [ postgresql.lib sqlite mariadb.client ];
+  buildInputs = [
+  postgresql.lib
+  sqlite
+  mariadb.client
+  ] ++ stdenv.lib.optionals stdenv.isDarwin [ darwin.apple_sdk.frameworks.Security ];
 
   cargoBuildFlags = [
     "--features postgres,sqlite,mysql"
