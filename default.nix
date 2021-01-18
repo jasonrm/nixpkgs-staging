@@ -14,4 +14,5 @@
   imageproxy = pkgs.callPackage ./pkgs/servers/imageproxy { };
 
   supervisord-go = pkgs.callPackage ./pkgs/tools/system/supervisord-go { };
+  uritool = pkgs.callPackage ./pkgs/tools/system/uritool { };
 }
