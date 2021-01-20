@@ -9,6 +9,7 @@
   bupstash = pkgs.callPackage ./pkgs/tools/backup/bupstash { };
   imaptar = pkgs.callPackage ./pkgs/tools/backup/imaptar { };
   imapbox = pkgs.callPackage ./pkgs/tools/backup/imapbox { };
+  up = pkgs.callPackage ./pkgs/tools/backup/up { };
 
   manticoresearch = pkgs.callPackage ./pkgs/servers/search/manticoresearch { };
   imageproxy = pkgs.callPackage ./pkgs/servers/imageproxy { };
