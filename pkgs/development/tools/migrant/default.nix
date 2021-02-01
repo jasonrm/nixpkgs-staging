@@ -37,5 +37,6 @@ rustPlatform.buildRustPackage rec {
     description = "Migration management for PostgreSQL/SQLite/MySQL";
     homepage = "https://github.com/jaemk/migrant";
     license = licenses.mit;
+    maintainer = ["jason@mcneil.dev"];
   };
 }

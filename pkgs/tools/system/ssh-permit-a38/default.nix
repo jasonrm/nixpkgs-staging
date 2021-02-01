@@ -31,5 +31,6 @@ rustPlatform.buildRustPackage rec {
     description = "Central management and deployment for SSH keys";
     homepage = "https://github.com/ierror/ssh-permit-a38";
     license = licenses.mit;
+    maintainer = ["jason@mcneil.dev"];
   };
 }

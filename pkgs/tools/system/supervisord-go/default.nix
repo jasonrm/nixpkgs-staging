@@ -21,7 +21,6 @@ buildGoModule rec {
     description = "a go-lang supervisor implementation";
     license = licenses.mit;
     homepage = "https://github.com/ochinchina/supervisord";
-    # maintainers = with lib.maintainers; [ philandstuff rawkode ];
-    # platforms = platforms.darwin ++ platforms.linux;
+    maintainer = ["jason@mcneil.dev"];
   };
 }

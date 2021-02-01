@@ -23,7 +23,6 @@ buildGoModule rec {
     description = "a caching, resizing image proxy written in Go";
     license = licenses.asl20;
     homepage = "https://github.com/willnorris/imageproxy";
-    # maintainers = with lib.maintainers; [ philandstuff rawkode ];
-    # platforms = platforms.darwin ++ platforms.linux;
+    maintainer = ["jason@mcneil.dev"];
   };
 }

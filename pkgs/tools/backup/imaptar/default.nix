@@ -21,7 +21,6 @@ buildGoModule rec {
     description = "utility to dump imap mailbox to a tarfile (maildir format)";
     license = licenses.asl20;
     homepage = "https://github.com/XS4ALL/imaptar";
-    # maintainers = with lib.maintainers; [ philandstuff rawkode ];
-    # platforms = platforms.darwin ++ platforms.linux;
+    maintainer = ["jason@mcneil.dev"];
   };
 }

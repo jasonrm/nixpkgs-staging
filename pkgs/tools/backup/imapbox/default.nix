@@ -44,6 +44,6 @@ python36Packages.buildPythonPackage rec {
     description = "Dump imap inbox to a local folder in a regular backupable format: html, json and attachements";
     homepage = "https://github.com/polo2ro/imapbox";
     license = licenses.mit;
-    maintainers = with maintainers; [ ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

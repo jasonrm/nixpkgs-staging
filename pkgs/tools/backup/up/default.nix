@@ -21,7 +21,6 @@ buildGoModule rec {
     description = "A simple utility for uploading stuff to BackBlaze's B2";
     license = licenses.mit;
     homepage = "https://github.com/alpn/up";
-    # maintainers = with lib.maintainers; [ philandstuff rawkode ];
-    # platforms = platforms.darwin ++ platforms.linux;
+    maintainer = ["jason@mcneil.dev"];
   };
 }
