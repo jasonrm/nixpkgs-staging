@@ -14,6 +14,7 @@
   manticoresearch = pkgs.callPackage ./pkgs/servers/search/manticoresearch { };
   imageproxy = pkgs.callPackage ./pkgs/servers/imageproxy { };
 
+  github-auth3 = pkgs.callPackage ./pkgs/tools/system/github-auth3 { };
   pushnix = pkgs.callPackage ./pkgs/tools/system/pushnix { };
   ssh-permit-a38 = pkgs.callPackage ./pkgs/tools/system/ssh-permit-a38 { };
   supervisord-go = pkgs.callPackage ./pkgs/tools/system/supervisord-go { };
