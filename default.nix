@@ -2,6 +2,7 @@
 {
   lossless-cut = pkgs.callPackage ./pkgs/applications/video/lossless-cut { };
 
+  frep = pkgs.callPackage ./pkgs/development/tools/frep { };
   migrant = pkgs.callPackage ./pkgs/development/tools/migrant { };
 
   redis-cell = pkgs.callPackage ./pkgs/development/libraries/redis-cell { };
