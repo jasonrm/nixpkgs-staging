@@ -1,4 +1,5 @@
 { stdenv
+, lib
 , fetchurl
 , cmake
 , expat
@@ -17,7 +18,7 @@ stdenv.mkDerivation rec {
   src = fetchurl {
     url = "https://github.com/manticoresoftware/manticoresearch/archive/${version}.tar.gz";
     sha256 = "0f78x1q6dr376p6zl4dnx4gfw62d0108924mrm654w985x634538";
-    # sha256 = stdenv.lib.fakeSha256;
+    # sha256 = lib.fakeSha256;
   };
 
   preConfigure = ''
@@ -32,7 +33,7 @@ stdenv.mkDerivation rec {
     "-DUSE_GALERA=OFF"
     "-DWITH_ICU=OFF"
     "-DDISABLE_TESTING=ON"
-  ] ++ stdenv.lib.optionals (!enableMysql) [
+  ] ++ lib.optionals (!enableMysql) [
     "-DWITH_MYSQL=0"
   ];
 
@@ -45,17 +46,17 @@ stdenv.mkDerivation rec {
   buildInputs = [
     jemalloc
     boost17x
-  ] ++ stdenv.lib.optionals enableMysql [
+  ] ++ lib.optionals enableMysql [
     libmysqlclient
-  ] ++ stdenv.lib.optionals enableXmlpipe2 [
+  ] ++ lib.optionals enableXmlpipe2 [
     expat
   ];
 
-  meta = {
+  meta = with lib; {
     description = "Open source text search engine for big data and stream filtering";
     homepage = "https://manticoresearch.com/";
-    license = stdenv.lib.licenses.gpl2;
-    platforms = stdenv.lib.platforms.all;
+    license = licenses.gpl2;
+    platforms = platforms.all;
     maintainer = ["jason@mcneil.dev"];
   };
 }

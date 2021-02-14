@@ -26,7 +26,7 @@ rustPlatform.buildRustPackage rec {
   postgresql.lib
   sqlite
   mariadb.client
-  ] ++ stdenv.lib.optionals stdenv.isDarwin [ darwin.apple_sdk.frameworks.Security ];
+  ] ++ lib.optionals stdenv.isDarwin [ darwin.apple_sdk.frameworks.Security ];
 
   cargoBuildFlags = [
     "--features postgres,sqlite,mysql"

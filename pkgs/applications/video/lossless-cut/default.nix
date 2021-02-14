@@ -1,4 +1,5 @@
-{ stdenv
+{ lib
+, stdenv
 , fetchurl
 , appimageTools
 , makeWrapper
@@ -60,7 +61,7 @@ stdenv.mkDerivation rec {
       --add-flags "$out/share/${pname}/resources --without-update"
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "The swiss army knife of lossless video/audio editing";
     homepage = "https://github.com/mifi/lossless-cut";
     license = licenses.mit;
