@@ -2,17 +2,17 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "mdbook-nix-eval";
-  version = "1.0.0";
+  version = "1.0.1";
 
   src = fetchFromGitHub {
     owner = "jasonrm";
     repo = "mdbook-nix-eval";
     rev = "v${version}";
-    sha256 = "1rw3i31amy55mzkigdf7j24ymp9w9jmhvnnaqs5rl9hn7qbv4a75";
+    sha256 = "0pzzf7jyq378nc27ffdzka676a0jblp259cjqsqcy27z5hzcvnhn";
     # sha256 = lib.fakeSha256;
   };
 
-  cargoSha256 = "0gvpilq5avijba50v4fq0m65glskmz8blgkb8g0jl5rx8bf6y3y6";
+  cargoSha256 = "16llg6pcx3lq8szyl2adq0mibvdvdlavz2kv0cs7rzcmdsq356fn";
   # cargoSha256 = lib.fakeSha256;
 
   buildInputs = [
