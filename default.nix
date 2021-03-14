@@ -2,6 +2,7 @@
 {
   lossless-cut = pkgs.callPackage ./pkgs/applications/video/lossless-cut { };
   godns = pkgs.callPackage ./pkgs/applications/networking/dyndns/godns { };
+  ddns = pkgs.callPackage ./pkgs/applications/networking/dyndns/ddns { };
 
   frep = pkgs.callPackage ./pkgs/development/tools/frep { };
   migrant = pkgs.callPackage ./pkgs/development/tools/migrant { };
