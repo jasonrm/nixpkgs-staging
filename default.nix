@@ -1,6 +1,7 @@
 { pkgs ? import <nixpkgs> { } }:
 {
   lossless-cut = pkgs.callPackage ./pkgs/applications/video/lossless-cut { };
+  godns = pkgs.callPackage ./pkgs/applications/networking/dyndns/godns { };
 
   frep = pkgs.callPackage ./pkgs/development/tools/frep { };
   migrant = pkgs.callPackage ./pkgs/development/tools/migrant { };
