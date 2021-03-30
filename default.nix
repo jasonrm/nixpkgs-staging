@@ -16,6 +16,7 @@
 
   manticoresearch = pkgs.callPackage ./pkgs/servers/search/manticoresearch { };
   imageproxy = pkgs.callPackage ./pkgs/servers/imageproxy { };
+  slowlogfmt = pkgs.callPackage ./pkgs/servers/monitoring/slowlogfmt { };
 
   github-auth3 = pkgs.callPackage ./pkgs/tools/system/github-auth3 { };
   pushnix = pkgs.callPackage ./pkgs/tools/system/pushnix { };
