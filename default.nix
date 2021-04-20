@@ -23,6 +23,7 @@
   ssh-permit-a38 = pkgs.callPackage ./pkgs/tools/system/ssh-permit-a38 { };
   supervisord-go = pkgs.callPackage ./pkgs/tools/system/supervisord-go { };
   uritool = pkgs.callPackage ./pkgs/tools/system/uritool { };
+  intelmas = pkgs.callPackage ./pkgs/tools/system/intelmas { };
 
   mdbook-nix-eval = pkgs.callPackage ./pkgs/tools/text/mdbook-nix-eval { };
 }
