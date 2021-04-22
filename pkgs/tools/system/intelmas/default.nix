@@ -33,9 +33,11 @@ in stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
-    mkdir $out
-    cp -r usr $out/
-  '';
+    mkdir -p $out/opt/intelmas/
+    cp usr/bin/intelmas $out/opt/intelmas/
+    cp usr/lib/intelmas/*so* $out/opt/intelmas/
+    cp -r usr/lib/intelmas/FirmwareModules $out/opt/intelmas/
+    '';
 
   meta = with lib; {
     homepage = "https://downloadcenter.intel.com/download/30379/Intel-Memory-and-Storage-Tool-CLI-Command-Line-Interface-";
