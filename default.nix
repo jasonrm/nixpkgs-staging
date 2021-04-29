@@ -24,6 +24,7 @@
   supervisord-go = pkgs.callPackage ./pkgs/tools/system/supervisord-go { };
   uritool = pkgs.callPackage ./pkgs/tools/system/uritool { };
   intelmas = pkgs.callPackage ./pkgs/tools/system/intelmas { };
+  machma = pkgs.callPackage ./pkgs/tools/system/machma { };
 
   mdbook-nix-eval = pkgs.callPackage ./pkgs/tools/text/mdbook-nix-eval { };
 }
