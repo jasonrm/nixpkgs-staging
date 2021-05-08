@@ -23,6 +23,6 @@ buildGoModule rec {
     description = "Generate file using template from environment, arguments, json/yaml/toml config files";
     license = licenses.asl20;
     homepage = "https://github.com/subchen/frep";
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }

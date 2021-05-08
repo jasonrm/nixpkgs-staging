@@ -57,6 +57,6 @@ stdenv.mkDerivation rec {
     homepage = "https://manticoresearch.com/";
     license = licenses.gpl2;
     platforms = platforms.all;
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }

@@ -20,6 +20,6 @@ buildGoModule rec {
     description = "a go-lang supervisor implementation";
     license = licenses.mit;
     homepage = "https://github.com/fd0/machma";
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }

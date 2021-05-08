@@ -27,6 +27,6 @@ buildGoModule rec {
     description = "Simple cli utility that pushes NixOS configuration and triggers a rebuild using ssh.";
     # license = licenses.none;
     homepage = "https://github.com/arnarg/pushnix";
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }

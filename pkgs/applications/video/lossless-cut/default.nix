@@ -65,7 +65,7 @@ stdenv.mkDerivation rec {
     description = "The swiss army knife of lossless video/audio editing";
     homepage = "https://github.com/mifi/lossless-cut";
     license = licenses.mit;
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
     platforms = [ "x86_64-linux" ];
   };
 }

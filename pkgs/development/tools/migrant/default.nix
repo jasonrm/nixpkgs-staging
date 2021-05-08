@@ -23,9 +23,9 @@ rustPlatform.buildRustPackage rec {
   # cargoSha256 = lib.fakeSha256;
 
   buildInputs = [
-  postgresql.lib
-  sqlite
-  mariadb.client
+    postgresql.lib
+    sqlite
+    mariadb.client
   ] ++ lib.optionals stdenv.isDarwin [ darwin.apple_sdk.frameworks.Security ];
 
   cargoBuildFlags = [
@@ -37,6 +37,6 @@ rustPlatform.buildRustPackage rec {
     description = "Migration management for PostgreSQL/SQLite/MySQL";
     homepage = "https://github.com/jaemk/migrant";
     license = licenses.mit;
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }

@@ -27,6 +27,6 @@ buildGoModule rec {
     description = "command-line tool that helps with URI/URL handling and proper part extraction, escaping and parsing";
     license = licenses.mit;
     homepage = "https://github.com/ochinchina/supervisord";
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }

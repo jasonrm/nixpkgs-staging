@@ -17,12 +17,12 @@ buildGoModule rec {
   vendorSha256 = "02xmvfk9nfydwvzzhr040x17037mlgl4s7157ibp3nq0fgzw5bx0";
   # vendorSha256 = lib.fakeSha256;
 
-  subPackages = ["cmd/imageproxy"];
+  subPackages = [ "cmd/imageproxy" ];
 
   meta = with lib; {
     description = "a caching, resizing image proxy written in Go";
     license = licenses.asl20;
     homepage = "https://github.com/willnorris/imageproxy";
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }

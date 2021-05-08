@@ -1,4 +1,5 @@
-{ stdenv, lib
+{ stdenv
+, lib
 , fetchurl
 , libarchive
 , unzip
@@ -6,7 +7,8 @@
 }:
 let
 
-in stdenv.mkDerivation rec {
+in
+stdenv.mkDerivation rec {
   name = "intelmas";
   version = "1.7";
 
@@ -37,7 +39,7 @@ in stdenv.mkDerivation rec {
     cp usr/bin/intelmas $out/opt/intelmas/
     cp usr/lib/intelmas/*so* $out/opt/intelmas/
     cp -r usr/lib/intelmas/FirmwareModules $out/opt/intelmas/
-    '';
+  '';
 
   meta = with lib; {
     homepage = "https://downloadcenter.intel.com/download/30379/Intel-Memory-and-Storage-Tool-CLI-Command-Line-Interface-";
