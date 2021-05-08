@@ -24,6 +24,7 @@
   supervisord-go = pkgs.callPackage ./pkgs/tools/system/supervisord-go { };
   uritool = pkgs.callPackage ./pkgs/tools/system/uritool { };
   intelmas = pkgs.callPackage ./pkgs/tools/system/intelmas { };
+  rnd64 = pkgs.callPackage ./pkgs/tools/system/rnd64 { };
   machma = pkgs.callPackage ./pkgs/tools/system/machma { };
   vlmcsd = pkgs.callPackage ./pkgs/tools/system/vlmcsd { };
 
