@@ -1,4 +1,5 @@
-{ pkgs ? import <nixpkgs> { } }:
+{ system ? builtins.currentSystem
+, pkgs ? import <nixpkgs> { inherit system; } }:
 {
   lossless-cut = pkgs.callPackage ./pkgs/applications/video/lossless-cut { };
   godns = pkgs.callPackage ./pkgs/applications/networking/dyndns/godns { };
