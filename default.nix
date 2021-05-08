@@ -25,6 +25,7 @@
   uritool = pkgs.callPackage ./pkgs/tools/system/uritool { };
   intelmas = pkgs.callPackage ./pkgs/tools/system/intelmas { };
   machma = pkgs.callPackage ./pkgs/tools/system/machma { };
+  vlmcsd = pkgs.callPackage ./pkgs/tools/system/vlmcsd { };
 
   mdbook-nix-eval = pkgs.callPackage ./pkgs/tools/text/mdbook-nix-eval { };
 }
