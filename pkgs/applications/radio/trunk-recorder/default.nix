@@ -2,6 +2,7 @@
 , lib
 , fetchFromGitHub
 
+, autoPatchelfHook
 , cmake
 , cppunit
 , pkg-config
@@ -35,6 +36,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [
+    autoPatchelfHook
     cmake
     pkg-config
     cppunit
