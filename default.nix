@@ -4,6 +4,7 @@
   lossless-cut = pkgs.callPackage ./pkgs/applications/video/lossless-cut { };
   godns = pkgs.callPackage ./pkgs/applications/networking/dyndns/godns { };
   ddns = pkgs.callPackage ./pkgs/applications/networking/dyndns/ddns { };
+  trunk-recorder = pkgs.callPackage ./pkgs/applications/radio/trunk-recorder { };
 
   frep = pkgs.callPackage ./pkgs/development/tools/frep { };
   migrant = pkgs.callPackage ./pkgs/development/tools/migrant { };
