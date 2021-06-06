@@ -7,6 +7,8 @@
 , mariadb
 , darwin
 , libiconv
+, pkg-config
+, openssl
 }:
 rustPlatform.buildRustPackage rec {
   pname = "migrant";
@@ -23,8 +25,13 @@ rustPlatform.buildRustPackage rec {
   cargoSha256 = "0pkih2piii7k524qn1irq1rb0l93pblmggxv6s1d57dn6krvm78z";
   # cargoSha256 = lib.fakeSha256;
 
+  nativeBuildInputs = [
+    pkg-config
+  ];
+
   buildInputs = [
     postgresql.lib
+    openssl
     sqlite
     mariadb.client
   ] ++ lib.optionals stdenv.isDarwin [
