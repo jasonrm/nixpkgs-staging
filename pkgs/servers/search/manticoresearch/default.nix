@@ -13,11 +13,12 @@
 }:
 stdenv.mkDerivation rec {
   pname = "manticore";
-  version = "3.5.4";
+  version = "3.6.0";
 
   src = fetchurl {
-    url = "https://github.com/manticoresoftware/manticoresearch/archive/${version}.tar.gz";
-    sha256 = "0f78x1q6dr376p6zl4dnx4gfw62d0108924mrm654w985x634538";
+    url = "https://repo.manticoresearch.com/repository/manticoresearch_source/release/manticore-3.6.0-210504-96d61d8-release-source.tar.gz";
+    # url = "https://github.com/manticoresoftware/manticoresearch/archive/${version}.tar.gz";
+    sha256 = "1xg1slpmbvwb1sl8m2zbb91qfr2qm5aigq8rbskjgy6a6z41j2ij";
     # sha256 = lib.fakeSha256;
   };
 
