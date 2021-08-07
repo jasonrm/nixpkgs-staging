@@ -21,6 +21,8 @@
   imageproxy = pkgs.callPackage ./pkgs/servers/imageproxy { };
   slowlogfmt = pkgs.callPackage ./pkgs/servers/monitoring/slowlogfmt { };
 
+  go-httpbin = pkgs.callPackage ./pkgs/tools/networking/go-httpbin { };
+
   github-auth3 = pkgs.callPackage ./pkgs/tools/system/github-auth3 { };
   pushnix = pkgs.callPackage ./pkgs/tools/system/pushnix { };
   ssh-permit-a38 = pkgs.callPackage ./pkgs/tools/system/ssh-permit-a38 { };
