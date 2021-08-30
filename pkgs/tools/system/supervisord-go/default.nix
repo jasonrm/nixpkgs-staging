@@ -1,20 +1,32 @@
 { lib
 , buildGoModule
 , fetchFromGitHub
+, makeWrapper
 }:
 buildGoModule rec {
   pname = "supervisord-go";
-  version = "d73619e2562b5e2f719541e278148b68fa98f3c6";
+  version = "37a4d835acba81050c5c26446169e567c45ddff9";
+
+  nativeBuildInputs = [makeWrapper];
 
   src = fetchFromGitHub {
     owner = "ochinchina";
     repo = "supervisord";
     rev = version;
-    sha256 = "0xkpigdk2iplagfjavm6sa4rzmhsa3h2gscjd29vvky7wmig3ykp";
+    sha256 = "sha256:0841hsp5dg2vf9lx8j5xs1fkrp3i128myh7zk8fvwwfkp893802s";
     # sha256 = lib.fakeSha256;
   };
 
-  vendorSha256 = "1han6mm61r0lksbyb81yrfp0pnsf5rw6lj9h6y6hxd5blqinskq5";
+  subPackages = [ "." ];
+
+  installPhase = ''
+    mkdir -p $out/bin $out/share/supervisord
+    cp -r ${src}/webgui $out/share/supervisord
+    install -m755 $GOPATH/bin/supervisord $out/bin
+    wrapProgram $out/bin/supervisord --run "cd $out/share/supervisord"
+  '';
+
+  vendorSha256 = "0mwil3qmslqsk390gg8x2ppqjw4a1layzfx50mri6gx6wj7c2y7s";
   # vendorSha256 = lib.fakeSha256;
 
   meta = with lib; {
