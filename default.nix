@@ -9,6 +9,7 @@
 
   frep = pkgs.callPackage ./pkgs/development/tools/frep { };
   migrant = pkgs.callPackage ./pkgs/development/tools/migrant { };
+  names = pkgs.callPackage ./pkgs/development/tools/names { };
 
   redis-cell = pkgs.callPackage ./pkgs/development/libraries/redis-cell { };
 
