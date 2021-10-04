@@ -21,6 +21,7 @@
   manticoresearch = pkgs.callPackage ./pkgs/servers/search/manticoresearch { };
   imageproxy = pkgs.callPackage ./pkgs/servers/imageproxy { };
   slowlogfmt = pkgs.callPackage ./pkgs/servers/monitoring/slowlogfmt { };
+  etherdfs = pkgs.callPackage ./pkgs/servers/etherdfs { };
 
   go-httpbin = pkgs.callPackage ./pkgs/tools/networking/go-httpbin { };
 
