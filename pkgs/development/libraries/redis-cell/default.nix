@@ -4,17 +4,17 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "redis-cell";
-  version = "v0.2.5";
+  version = "v0.3.0";
 
   src = fetchFromGitHub {
     owner = "brandur";
     repo = pname;
     rev = version;
-    sha256 = "000sdb1b8ilypr9k3bmam9q50bx0dwancpihh4p1wxa38b0l4spm";
+    sha256 = "1s240lgshign1jkdr6bs5jv1mr0wygpl3al6a9l9kqqlkyrwzbj7";
     # sha256 = lib.fakeSha256;
   };
 
-  cargoSha256 = "0aqq8i997zfa40ddi9q677dlgls59fq3fl0mqanj1ixv99paj27g";
+  cargoSha256 = "1b47nax0gdiw4ngh2d00rz6mnhm06f8pyydrbczyx0hkyxdv3zml";
   # cargoSha256 = lib.fakeSha256;
 
   cargoPatches = [
