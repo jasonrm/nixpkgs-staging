@@ -25,6 +25,6 @@ buildGoModule rec {
     description = "A reasonably complete and well-tested golang port of httpbin, with zero dependencies outside the go stdlib. ";
     license = licenses.mit;
     homepage = "https://github.com/mccutchen/go-httpbin";
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }

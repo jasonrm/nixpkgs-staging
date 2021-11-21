@@ -7,7 +7,7 @@ buildGoModule rec {
   pname = "supervisord-go";
   version = "37a4d835acba81050c5c26446169e567c45ddff9";
 
-  nativeBuildInputs = [makeWrapper];
+  nativeBuildInputs = [ makeWrapper ];
 
   src = fetchFromGitHub {
     owner = "ochinchina";
