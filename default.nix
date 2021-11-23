@@ -1,5 +1,9 @@
 { system ? builtins.currentSystem
 , pkgs ? import <nixpkgs> { inherit system; }
+, buildPecl ? pkgs.callPackage "${pkgs.path}/pkgs/build-support/build-pecl.nix" {
+  stdenv = pkgs.stdenv;
+  php = pkgs.php80.unwrapped;
+}
 }:
 {
   lossless-cut = pkgs.callPackage ./pkgs/applications/video/lossless-cut { };
@@ -10,6 +14,10 @@
   frep = pkgs.callPackage ./pkgs/development/tools/frep { };
   migrant = pkgs.callPackage ./pkgs/development/tools/migrant { };
   names = pkgs.callPackage ./pkgs/development/tools/names { };
+
+  php-packages = {
+    spx = pkgs.callPackage ./pkgs/development/php-packages/spx { inherit buildPecl; };
+  };
 
   redis-cell = pkgs.callPackage ./pkgs/development/libraries/redis-cell { };
 
