@@ -1,10 +1,15 @@
 { system ? builtins.currentSystem
 , pkgs ? import <nixpkgs> { inherit system; }
-, buildPecl ? pkgs.callPackage "${pkgs.path}/pkgs/build-support/build-pecl.nix" {
-  stdenv = pkgs.stdenv;
-  php = pkgs.php80.unwrapped;
-}
 }:
+let
+  phpExtensions = {
+    packageOverrides = final: prev: {
+      extensions = prev.extensions // {
+        spx = pkgs.callPackage ./pkgs/development/php-packages/spx { inherit (prev) buildPecl; };
+      };
+    };
+  };
+in
 {
   lossless-cut = pkgs.callPackage ./pkgs/applications/video/lossless-cut { };
   godns = pkgs.callPackage ./pkgs/applications/networking/dyndns/godns { };
@@ -15,9 +20,11 @@
   migrant = pkgs.callPackage ./pkgs/development/tools/migrant { };
   names = pkgs.callPackage ./pkgs/development/tools/names { };
 
-  php-packages = {
-    spx = pkgs.callPackage ./pkgs/development/php-packages/spx { inherit buildPecl; };
-  };
+  # TODO: Is there a better alternative to this?
+  php = pkgs.php.override phpExtensions;
+  php74 = pkgs.php74.override phpExtensions;
+  php80 = pkgs.php80.override phpExtensions;
+  php81 = pkgs.php81.override phpExtensions;
 
   redis-cell = pkgs.callPackage ./pkgs/development/libraries/redis-cell { };
 
