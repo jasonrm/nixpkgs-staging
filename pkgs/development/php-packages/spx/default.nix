@@ -1,7 +1,7 @@
 { buildPecl, lib, zlib, pkg-config, fetchFromGitHub }:
 let
   pname = "spx";
-  version = "0.4.11";
+  version = "0.4.12";
 in
 buildPecl {
   inherit pname version;
@@ -10,7 +10,8 @@ buildPecl {
     owner = "NoiseByNorthwest";
     repo = "php-spx";
     rev = "v${version}";
-    sha256 = "sha256-navGg30qxDW1rlbDeAI4v23Pia2IWMkZ8occUvfNb5c=";
+    sha256 = "sha256-BHN1VtSUvr5Ctnvs0fi65HGBmJrKfTZ8aybRdkrDZMw=";
+    # sha256 = lib.fakeSha256;
   };
 
   configureFlags = [
