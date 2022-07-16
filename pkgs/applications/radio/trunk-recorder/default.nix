@@ -6,14 +6,15 @@
 , cmake
 , cppunit
 , pkg-config
+, makeWrapper
 
-, boost175
+, boost177
 , curl
 , fftw
 , fftwFloat
 , gmp
 , gnuradio3_8Minimal
-, gnuradio3_8Packages
+, gnuradio3_8
 , hackrf
 , icu
 , log4cpp
@@ -21,18 +22,23 @@
 , openssl
 , uhd
 , volk
+, spdlog
+, thrift
+
+, sox
+, fdk-aac-encoder
 }:
 
 stdenv.mkDerivation rec {
   pname = "trunk-recorder";
-  version = "3.3.7";
+  version = "4.3.2";
 
   src = fetchFromGitHub {
     owner = "robotastic";
     repo = "trunk-recorder";
     rev = "v${version}";
-    sha256 = "1njjvl3gwkpzgr0ssyfz74yhdci4ghd40j34schw8r9k7d3jvfs7";
-    # sha256 = lib.fakeSha256;
+    hash = "sha256-E7mjnzVaujxlCklrRqtVU8MGNflf6I2aAES9pYPnvsQ=";
+    # hash = lib.fakeHash;
   };
 
   nativeBuildInputs = [
@@ -40,15 +46,18 @@ stdenv.mkDerivation rec {
     cmake
     pkg-config
     cppunit
+    makeWrapper
   ];
   buildInputs = [
-    boost175
+    thrift
+    spdlog
+    boost177
     curl
     fftw
     fftwFloat
     gmp
     gnuradio3_8Minimal
-    gnuradio3_8Packages.osmosdr
+    gnuradio3_8.pkgs.osmosdr
     hackrf
     icu
     log4cpp
@@ -61,10 +70,17 @@ stdenv.mkDerivation rec {
   installPhase = ''
     runHook preInstall
 
-    install -D -m 755 recorder $out/bin/recorder
-    install -D -m 755 lib/op25_repeater/lib/libgnuradio-op25_repeater.so $out/usr/lib/libgnuradio-op25_repeater.so
+    install -D -m 755 trunk-recorder $out/bin/trunk-recorder
+    for LIB in libbroadcastify_uploader.so libgnuradio-op25_repeater.so libopenmhz_uploader.so librdioscanner_uploader.so libsimplestream.so libstat_socket.so libunit_script.so; do
+      install -D -m 755 $LIB $out/usr/lib/$LIB
+    done
 
     runHook postInstall
+  '';
+
+  postInstall = ''
+    wrapProgram $out/bin/trunk-recorder \
+      --prefix PATH ":" "${sox}/bin:${fdk-aac-encoder}/bin"
   '';
 
   meta = with lib; {
