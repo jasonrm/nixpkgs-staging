@@ -10,11 +10,14 @@ let
     };
   };
 in
-{
+rec {
   lossless-cut = pkgs.callPackage ./pkgs/applications/video/lossless-cut { };
   godns = pkgs.callPackage ./pkgs/applications/networking/dyndns/godns { };
   ddns = pkgs.callPackage ./pkgs/applications/networking/dyndns/ddns { };
   trunk-recorder = pkgs.callPackage ./pkgs/applications/radio/trunk-recorder { };
+  glscopeclient = pkgs.callPackage ./pkgs/applications/science/electronics/glscopeclient {
+    inherit ffts;
+  };
 
   frep = pkgs.callPackage ./pkgs/development/tools/frep { };
   migrant = pkgs.callPackage ./pkgs/development/tools/migrant { };
@@ -27,6 +30,7 @@ in
   php81 = pkgs.php81.override phpExtensions;
 
   redis-cell = pkgs.callPackage ./pkgs/development/libraries/redis-cell { };
+  ffts = pkgs.callPackage ./pkgs/development/libraries/ffts { };
 
   bupstash = pkgs.callPackage ./pkgs/tools/backup/bupstash { };
   imaptar = pkgs.callPackage ./pkgs/tools/backup/imaptar { };
