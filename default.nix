@@ -14,6 +14,7 @@ rec {
   lossless-cut = pkgs.callPackage ./pkgs/applications/video/lossless-cut { };
   godns = pkgs.callPackage ./pkgs/applications/networking/dyndns/godns { };
   ddns = pkgs.callPackage ./pkgs/applications/networking/dyndns/ddns { };
+  transmission-rss-go = pkgs.callPackage ./pkgs/applications/networking/p2p/transmission-rss-go { };
   trunk-recorder = pkgs.callPackage ./pkgs/applications/radio/trunk-recorder { };
   glscopeclient = pkgs.callPackage ./pkgs/applications/science/electronics/glscopeclient {
     inherit ffts;
