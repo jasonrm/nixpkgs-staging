@@ -42,6 +42,7 @@ rec {
   imageproxy = pkgs.callPackage ./pkgs/servers/imageproxy { };
   slowlogfmt = pkgs.callPackage ./pkgs/servers/monitoring/slowlogfmt { };
   etherdfs = pkgs.callPackage ./pkgs/servers/etherdfs { };
+  radius-mac = pkgs.callPackage ./pkgs/servers/radius-mac { };
 
   go-httpbin = pkgs.callPackage ./pkgs/tools/networking/go-httpbin { };
 
