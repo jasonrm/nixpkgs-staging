@@ -6,11 +6,11 @@
 }: with lib; let
   cfg = config.services.readsb;
 in {
-  options = {
+  options = with lib.types; {
     services.readsb = {
       enable = mkEnableOption "Enabled ADS-B decoder swiss knife";
       arguments = mkOption {
-        type = types.listOf str;
+        type = listOf str;
         default = [
           "--device-type rtlsdr"
           "--net"
