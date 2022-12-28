@@ -24,6 +24,8 @@ in {
           "--net-bo-port 0"
           "--net-ri-port 0"
           "--write-json-every 1"
+          "--stats-every 60"
+          "--quiet"
         ];
       };
     };

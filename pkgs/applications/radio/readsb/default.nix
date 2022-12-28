@@ -42,6 +42,7 @@ stdenv.mkDerivation rec {
     "RTLSDR=yes"
     "BLADERF=yes"
     "PLUTOSDR=yes"
+    "TRACKS_UUID=yes"
   ];
 
   installPhase = ''
