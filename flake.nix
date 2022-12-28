@@ -35,6 +35,9 @@
     packages
     // {
       nixosModules.default = {
+        nixpkgs.overlays = [
+            (final: prev: allPackages { pkgs = prev; lib = prev.lib; })
+          ];
         imports = nixosModules;
       };
       overlays.default = final: prev: allPackages { pkgs = prev; lib = prev.lib; };
