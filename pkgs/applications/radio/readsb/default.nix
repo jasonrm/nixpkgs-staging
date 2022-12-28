@@ -1,7 +1,6 @@
 { lib
 , stdenv
 , fetchFromGitHub
-, git
 , zlib
 , zstd
 , ncurses
@@ -18,22 +17,20 @@ stdenv.mkDerivation rec {
     # hash = lib.fakeHash;
   };
 
-  MODES_READSB_VERSION = version;
-
-  installPhase = ''
-    mkdir -p $out/bin
-    cp readsb $out/bin/$bin
-  '';
-
-  nativeBuildInputs = [
-    git
-  ];
-
   buildInputs = [
     zlib
     zstd
     ncurses
   ];
+
+  makeFlags = [
+    "READSB_VERSION=${version}"
+  ];
+  
+  installPhase = ''
+    mkdir -p $out/bin
+    install -m755 readsb $out/bin/$bin
+  '';
 
   meta = with lib; {
     description = "ADS-B decoder swiss knife";
