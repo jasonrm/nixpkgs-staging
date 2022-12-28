@@ -34,6 +34,8 @@ in rec {
   redis-cell = pkgs.callPackage ./development/libraries/redis-cell {};
   ffts = pkgs.callPackage ./development/libraries/ffts {};
 
+  zsh-tmux-auto-title = pkgs.callPackage ./shells/zsh/zsh-tmux-auto-title {};
+
   bupstash = pkgs.callPackage ./tools/backup/bupstash {};
   imaptar = pkgs.callPackage ./tools/backup/imaptar {};
   imapbox = pkgs.callPackage ./tools/backup/imapbox {};
