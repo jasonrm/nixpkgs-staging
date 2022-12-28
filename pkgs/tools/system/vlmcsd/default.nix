@@ -1,7 +1,8 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, gcc
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  gcc,
 }:
 stdenv.mkDerivation rec {
   pname = "vlmcsd";
@@ -38,6 +39,6 @@ stdenv.mkDerivation rec {
     description = "KMS Emulator in C";
     homepage = "https://github.com/Wind4/vlmcsd";
     # platforms = platforms.linux;
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

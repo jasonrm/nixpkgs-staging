@@ -1,10 +1,11 @@
-{ lib
-, fetchFromGitHub
-, rustPlatform
-, pkg-config
-, openssl
-, libssh2
-, zlib
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
+  pkg-config,
+  openssl,
+  libssh2,
+  zlib,
 }:
 rustPlatform.buildRustPackage rec {
   pname = "ssh-permit-a38";
@@ -21,8 +22,8 @@ rustPlatform.buildRustPackage rec {
   cargoSha256 = "1gsb418darxppm557q99ikim886xw03wd9pxk3ywwsy4kxrxd54s";
   # cargoSha256 = lib.fakeSha256;
 
-  nativeBuildInputs = [ pkg-config ];
-  buildInputs = [ openssl libssh2 zlib ];
+  nativeBuildInputs = [pkg-config];
+  buildInputs = [openssl libssh2 zlib];
 
   # Tests use the same backing JSON file
   cargoParallelTestThreads = false;
@@ -31,6 +32,6 @@ rustPlatform.buildRustPackage rec {
     description = "Central management and deployment for SSH keys";
     homepage = "https://github.com/ierror/ssh-permit-a38";
     license = licenses.mit;
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

@@ -1,6 +1,7 @@
-{ lib
-, buildGoModule
-, fetchFromGitHub
+{
+  lib,
+  buildGoModule,
+  fetchFromGitHub,
 }:
 buildGoModule rec {
   pname = "slowlogfmt";
@@ -21,6 +22,6 @@ buildGoModule rec {
     description = "MySQL slow log table to logfmt";
     license = licenses.mit;
     homepage = "https://github.com/jasonrm/slowlogfmt";
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

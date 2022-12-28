@@ -1,6 +1,7 @@
-{ lib
-, buildGoModule
-, fetchFromGitHub
+{
+  lib,
+  buildGoModule,
+  fetchFromGitHub,
 }:
 buildGoModule rec {
   pname = "transmission-rss-go";
@@ -24,6 +25,6 @@ buildGoModule rec {
     description = "Dynamic DNS client for Cloudflare managed domains";
     license = licenses.gpl3;
     homepage = "https://github.com/whatust/transmission-rss-go";
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

@@ -1,8 +1,9 @@
-{ lib
-, stdenv
-, buildGoModule
-, fetchFromGitHub
-, darwin
+{
+  lib,
+  stdenv,
+  buildGoModule,
+  fetchFromGitHub,
+  darwin,
 }:
 buildGoModule rec {
   pname = "go-httpbin";
@@ -19,12 +20,12 @@ buildGoModule rec {
   vendorSha256 = "0sjjj9z1dhilhpc8pq4154czrb79z9cm044jvn75kxcjv6v5l2m5";
   # vendorSha256 = lib.fakeSha256;
 
-  subPackages = [ "cmd/go-httpbin" ];
+  subPackages = ["cmd/go-httpbin"];
 
   meta = with lib; {
     description = "A reasonably complete and well-tested golang port of httpbin, with zero dependencies outside the go stdlib. ";
     license = licenses.mit;
     homepage = "https://github.com/mccutchen/go-httpbin";
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

@@ -1,29 +1,27 @@
-{ stdenv
-, lib
-, fetchFromGitHub
-
-, autoPatchelfHook
-, cmake
-, cppunit
-, pkg-config
-, makeWrapper
-
-, gtkmm3
-, glm
-, vulkan-headers
-, vulkan-loader
-, clfft
-, libyamlcpp
-, glew
-, ffts
-, shaderc
-, pcre
-, opencl-clhpp
-, ocl-icd
-# , vulkan
-# , opencl
+{
+  stdenv,
+  lib,
+  fetchFromGitHub,
+  autoPatchelfHook,
+  cmake,
+  cppunit,
+  pkg-config,
+  makeWrapper,
+  gtkmm3,
+  glm,
+  vulkan-headers,
+  vulkan-loader,
+  clfft,
+  libyamlcpp,
+  glew,
+  ffts,
+  shaderc,
+  pcre,
+  opencl-clhpp,
+  ocl-icd,
+  # , vulkan
+  # , opencl
 }:
-
 stdenv.mkDerivation rec {
   pname = "glscopeclient";
   version = "3bc6b5f29650c555a83cbe3dfbb39e3d00467496";
@@ -46,19 +44,19 @@ stdenv.mkDerivation rec {
     # makeWrapper
   ];
   buildInputs = [
-  gtkmm3
-  glm
-  pcre
-  vulkan-headers
-  vulkan-loader
-  clfft
-  glew
-  libyamlcpp
-  ffts
-  opencl-clhpp
-  ocl-icd
-  # vulkan
-  # opencl
+    gtkmm3
+    glm
+    pcre
+    vulkan-headers
+    vulkan-loader
+    clfft
+    glew
+    libyamlcpp
+    ffts
+    opencl-clhpp
+    ocl-icd
+    # vulkan
+    # opencl
     # thrift
     # spdlog
     # boost177

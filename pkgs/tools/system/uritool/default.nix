@@ -1,8 +1,9 @@
-{ lib
-, stdenv
-, buildGoModule
-, fetchFromGitHub
-, darwin
+{
+  lib,
+  stdenv,
+  buildGoModule,
+  fetchFromGitHub,
+  darwin,
 }:
 buildGoModule rec {
   pname = "uritool";
@@ -20,13 +21,15 @@ buildGoModule rec {
   # vendorSha256 = lib.fakeSha256;
   vendorSha256 = null;
 
-  buildInputs = [
-  ] ++ lib.optionals stdenv.isDarwin [ darwin.apple_sdk.frameworks.CoreFoundation ];
+  buildInputs =
+    [
+    ]
+    ++ lib.optionals stdenv.isDarwin [darwin.apple_sdk.frameworks.CoreFoundation];
 
   meta = with lib; {
     description = "command-line tool that helps with URI/URL handling and proper part extraction, escaping and parsing";
     license = licenses.mit;
     homepage = "https://github.com/ochinchina/supervisord";
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

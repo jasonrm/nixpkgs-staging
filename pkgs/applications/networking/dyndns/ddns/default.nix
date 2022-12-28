@@ -1,6 +1,7 @@
-{ lib
-, buildGoModule
-, fetchFromGitHub
+{
+  lib,
+  buildGoModule,
+  fetchFromGitHub,
 }:
 buildGoModule rec {
   pname = "ddns";
@@ -24,6 +25,6 @@ buildGoModule rec {
     description = "Dynamic DNS client for Cloudflare managed domains";
     license = licenses.asl20;
     homepage = "https://github.com/milgradesec/ddns";
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

@@ -1,6 +1,7 @@
-{ lib
-, buildGoModule
-, fetchFromGitHub
+{
+  lib,
+  buildGoModule,
+  fetchFromGitHub,
 }:
 buildGoModule rec {
   pname = "imaptar";
@@ -21,6 +22,6 @@ buildGoModule rec {
     description = "utility to dump imap mailbox to a tarfile (maildir format)";
     license = licenses.asl20;
     homepage = "https://github.com/XS4ALL/imaptar";
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

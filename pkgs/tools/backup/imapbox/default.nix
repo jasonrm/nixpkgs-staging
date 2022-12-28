@@ -1,9 +1,10 @@
-{ lib
-, pkgs
-, pythonPackages
-, fetchFromGitHub
+{
+  lib,
+  pkgs,
+  python3Packages,
+  fetchFromGitHub,
 }:
-pythonPackages.buildPythonPackage rec {
+python3Packages.buildPythonPackage rec {
   pname = "imapbox";
   version = "120513e";
 
@@ -16,15 +17,14 @@ pythonPackages.buildPythonPackage rec {
   };
 
   buildPhase = ''
-    ${pythonPackages.python.interpreter} -O -m compileall .
+    ${python3Packages.python.interpreter} -O -m compileall .
   '';
 
-  propagatedBuildInputs = with pythonPackages; [
+  propagatedBuildInputs = with python3Packages; [
     six
     chardet
     pdfkit
   ];
-
 
   doCheck = false;
 
@@ -37,13 +37,13 @@ pythonPackages.buildPythonPackage rec {
   postFixup = ''
     makeWrapper "$out/share/imapbox.py" "$out/bin/imapbox" \
       --set PYTHONPATH "$PYTHONPATH" \
-      --set PATH ${pythonPackages.python}/bin
+      --set PATH ${python3Packages.python}/bin
   '';
 
   meta = with lib; {
     description = "Dump imap inbox to a local folder in a regular backupable format: html, json and attachements";
     homepage = "https://github.com/polo2ro/imapbox";
     license = licenses.mit;
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

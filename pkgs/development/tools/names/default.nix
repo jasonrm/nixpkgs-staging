@@ -1,14 +1,15 @@
-{ stdenv
-, lib
-, fetchFromGitHub
-, rustPlatform
-, postgresql
-, sqlite
-, mariadb
-, darwin
-, libiconv
-, pkg-config
-, openssl
+{
+  stdenv,
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
+  postgresql,
+  sqlite,
+  mariadb,
+  darwin,
+  libiconv,
+  pkg-config,
+  openssl,
 }:
 rustPlatform.buildRustPackage rec {
   pname = "names";
@@ -43,11 +44,10 @@ rustPlatform.buildRustPackage rec {
   #   "--features postgres,sqlite,mysql"
   # ];
 
-
   meta = with lib; {
     description = "Random name generator";
     homepage = "https://github.com/fnichol/names";
     license = licenses.mit;
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

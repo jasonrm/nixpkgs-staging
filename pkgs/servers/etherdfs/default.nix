@@ -1,6 +1,7 @@
-{ lib
-, stdenv
-, fetchurl
+{
+  lib,
+  stdenv,
+  fetchurl,
 }:
 stdenv.mkDerivation rec {
   pname = "etherdfs";
@@ -25,6 +26,6 @@ stdenv.mkDerivation rec {
     description = "An ethernet-based file system for DOS";
     homepage = "http://etherdfs.sourceforge.net";
     # platforms = platforms.linux;
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

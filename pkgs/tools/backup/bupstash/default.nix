@@ -1,9 +1,10 @@
-{ lib
-, fetchFromGitHub
-, rustPlatform
-, pkg-config
-, libsodium
-, libiconv
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
+  pkg-config,
+  libsodium,
+  libiconv,
 }:
 rustPlatform.buildRustPackage rec {
   pname = "bupstash";
@@ -32,6 +33,6 @@ rustPlatform.buildRustPackage rec {
     description = "Easy and efficient encrypted backups";
     homepage = "https://github.com/andrewchambers/bupstash";
     license = licenses.mit;
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

@@ -1,24 +1,22 @@
-{ stdenv
-, lib
-, fetchFromGitHub
-
-, autoPatchelfHook
-, cmake
-, cppunit
-, pkg-config
-, makeWrapper
-
-, gtkmm3
-, glm
-, vulkan-headers
-, vulkan-loader
-, clfft
-,libyamlcpp
-,glew
-# , vulkan
-# , opencl
+{
+  stdenv,
+  lib,
+  fetchFromGitHub,
+  autoPatchelfHook,
+  cmake,
+  cppunit,
+  pkg-config,
+  makeWrapper,
+  gtkmm3,
+  glm,
+  vulkan-headers,
+  vulkan-loader,
+  clfft,
+  libyamlcpp,
+  glew,
+  # , vulkan
+  # , opencl
 }:
-
 stdenv.mkDerivation rec {
   pname = "ffts";
   version = "fe86885ecafd0d16eb122f3212403d1d5a86e24e";
@@ -40,14 +38,13 @@ stdenv.mkDerivation rec {
     # makeWrapper
   ];
   buildInputs = [
-  # gtkmm3
-  # glm
-  # vulkan-headers
-  # vulkan-loader
-  # clfft
-  # glew
-  # libyamlcpp
-
+    # gtkmm3
+    # glm
+    # vulkan-headers
+    # vulkan-loader
+    # clfft
+    # glew
+    # libyamlcpp
   ];
 
   # installPhase = ''

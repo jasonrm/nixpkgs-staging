@@ -1,13 +1,14 @@
-{ lib
-, buildGoModule
-, fetchFromGitHub
-, makeWrapper
+{
+  lib,
+  buildGoModule,
+  fetchFromGitHub,
+  makeWrapper,
 }:
 buildGoModule rec {
   pname = "supervisord-go";
   version = "37a4d835acba81050c5c26446169e567c45ddff9";
 
-  nativeBuildInputs = [ makeWrapper ];
+  nativeBuildInputs = [makeWrapper];
 
   src = fetchFromGitHub {
     owner = "ochinchina";
@@ -17,7 +18,7 @@ buildGoModule rec {
     # sha256 = lib.fakeSha256;
   };
 
-  subPackages = [ "." ];
+  subPackages = ["."];
 
   installPhase = ''
     mkdir -p $out/bin $out/share/supervisord
@@ -33,6 +34,6 @@ buildGoModule rec {
     description = "a go-lang supervisor implementation";
     license = licenses.mit;
     homepage = "https://github.com/ochinchina/supervisord";
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

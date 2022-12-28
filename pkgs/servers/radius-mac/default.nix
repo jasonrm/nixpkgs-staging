@@ -1,4 +1,9 @@
-{ stdenv, fetchFromGitHub, lib, gcc }:
+{
+  stdenv,
+  fetchFromGitHub,
+  lib,
+  gcc,
+}:
 stdenv.mkDerivation rec {
   pname = "radius-mac";
   version = "188b1dbf";
@@ -20,7 +25,7 @@ stdenv.mkDerivation rec {
     cp src/radius-mac $out/bin/$bin
   '';
 
-  hardeningDisable = lib.optionals (stdenv.isAarch64 && stdenv.isDarwin) [ "stackprotector" ];
+  hardeningDisable = lib.optionals (stdenv.isAarch64 && stdenv.isDarwin) ["stackprotector"];
 
   meta = with lib; {
     homepage = "https://github.com/carlanton/radius-mac";

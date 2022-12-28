@@ -1,34 +1,31 @@
-{ stdenv
-, lib
-, fetchFromGitHub
-
-, autoPatchelfHook
-, cmake
-, cppunit
-, pkg-config
-, makeWrapper
-
-, boost177
-, curl
-, fftw
-, fftwFloat
-, gmp
-, gnuradio3_8Minimal
-, gnuradio3_8
-, hackrf
-, icu
-, log4cpp
-, mpir
-, openssl
-, uhd
-, volk
-, spdlog
-, thrift
-
-, sox
-, fdk-aac-encoder
+{
+  stdenv,
+  lib,
+  fetchFromGitHub,
+  autoPatchelfHook,
+  cmake,
+  cppunit,
+  pkg-config,
+  makeWrapper,
+  boost177,
+  curl,
+  fftw,
+  fftwFloat,
+  gmp,
+  gnuradio3_8Minimal,
+  gnuradio3_8,
+  hackrf,
+  icu,
+  log4cpp,
+  mpir,
+  openssl,
+  uhd,
+  volk,
+  spdlog,
+  thrift,
+  sox,
+  fdk-aac-encoder,
 }:
-
 stdenv.mkDerivation rec {
   pname = "trunk-recorder";
   version = "4.3.2";

@@ -1,8 +1,9 @@
-{ lib
-, stdenv
-, buildGoModule
-, fetchFromGitHub
-, darwin
+{
+  lib,
+  stdenv,
+  buildGoModule,
+  fetchFromGitHub,
+  darwin,
 }:
 buildGoModule rec {
   pname = "github-auth3";
@@ -23,6 +24,6 @@ buildGoModule rec {
     description = "Use Github for your SSH AuthorizedKeysCommand";
     # license = licenses.mit;
     homepage = "https://github.com/tsutsu/github-auth3";
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

@@ -1,6 +1,7 @@
-{ lib
-, buildGoModule
-, fetchFromGitHub
+{
+  lib,
+  buildGoModule,
+  fetchFromGitHub,
 }:
 buildGoModule rec {
   pname = "up";
@@ -21,6 +22,6 @@ buildGoModule rec {
     description = "A simple utility for uploading stuff to BackBlaze's B2";
     license = licenses.mit;
     homepage = "https://github.com/alpn/up";
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

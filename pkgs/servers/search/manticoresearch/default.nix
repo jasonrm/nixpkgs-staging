@@ -1,15 +1,16 @@
-{ stdenv
-, lib
-, fetchurl
-, cmake
-, expat
-, boost17x
-, flex
-, jemalloc
-, bison
-, libmysqlclient
-, enableXmlpipe2 ? false
-, enableMysql ? true
+{
+  stdenv,
+  lib,
+  fetchurl,
+  cmake,
+  expat,
+  boost17x,
+  flex,
+  jemalloc,
+  bison,
+  libmysqlclient,
+  enableXmlpipe2 ? false,
+  enableMysql ? true,
 }:
 stdenv.mkDerivation rec {
   pname = "manticore";
@@ -28,15 +29,17 @@ stdenv.mkDerivation rec {
       --replace 'set(Boost_USE_STATIC_RUNTIME ON)' '# set(Boost_USE_STATIC_RUNTIME ON)'
   '';
 
-  cmakeFlags = [
-    "-DBOOST_ROOT=${boost17x.dev}"
-    "-DWITH_STEMMER=OFF"
-    "-DUSE_GALERA=OFF"
-    "-DWITH_ICU=OFF"
-    "-DDISABLE_TESTING=ON"
-  ] ++ lib.optionals (!enableMysql) [
-    "-DWITH_MYSQL=0"
-  ];
+  cmakeFlags =
+    [
+      "-DBOOST_ROOT=${boost17x.dev}"
+      "-DWITH_STEMMER=OFF"
+      "-DUSE_GALERA=OFF"
+      "-DWITH_ICU=OFF"
+      "-DDISABLE_TESTING=ON"
+    ]
+    ++ lib.optionals (!enableMysql) [
+      "-DWITH_MYSQL=0"
+    ];
 
   nativeBuildInputs = [
     cmake
@@ -44,20 +47,23 @@ stdenv.mkDerivation rec {
     flex
   ];
 
-  buildInputs = [
-    jemalloc
-    boost17x
-  ] ++ lib.optionals enableMysql [
-    libmysqlclient
-  ] ++ lib.optionals enableXmlpipe2 [
-    expat
-  ];
+  buildInputs =
+    [
+      jemalloc
+      boost17x
+    ]
+    ++ lib.optionals enableMysql [
+      libmysqlclient
+    ]
+    ++ lib.optionals enableXmlpipe2 [
+      expat
+    ];
 
   meta = with lib; {
     description = "Open source text search engine for big data and stream filtering";
     homepage = "https://manticoresearch.com/";
     license = licenses.gpl2;
     platforms = platforms.all;
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

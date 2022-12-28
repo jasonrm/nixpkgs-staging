@@ -1,7 +1,8 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, gcc
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  gcc,
 }:
 stdenv.mkDerivation rec {
   pname = "rnd64";
@@ -60,6 +61,6 @@ stdenv.mkDerivation rec {
     license = licenses.gpl3;
     homepage = "https://github.com/Tinram/RND64";
     platforms = platforms.linux;
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

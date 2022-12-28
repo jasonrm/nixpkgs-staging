@@ -1,6 +1,7 @@
-{ lib
-, fetchFromGitHub
-, rustPlatform
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
 }:
 rustPlatform.buildRustPackage rec {
   pname = "tere";
@@ -24,6 +25,6 @@ rustPlatform.buildRustPackage rec {
     description = "Terminal file explorer";
     homepage = "https://github.com/mgunyho/tere";
     license = licenses.eupl12;
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

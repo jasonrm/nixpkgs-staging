@@ -1,50 +1,49 @@
-{ stdenv
-, lib
-, fetchurl
-, libarchive
-, unzip
-, autoPatchelfHook
-}:
-let
-
+{
+  stdenv,
+  lib,
+  fetchurl,
+  libarchive,
+  unzip,
+  autoPatchelfHook,
+}: let
 in
-stdenv.mkDerivation rec {
-  name = "intelmas";
-  version = "1.7";
+  stdenv.mkDerivation rec {
+    name = "intelmas";
+    version = "1.7";
 
-  intelDownloadId = "30379";
+    intelDownloadId = "30379";
 
-  src = fetchurl {
-    name = "intel-mas-src-${version}";
-    url = "https://downloadmirror.intel.com/${intelDownloadId}/eng/Intel%C2%AE_MAS_CLI_Tool_Linux_${version}.zip";
-    hash = "sha256-hysXnHbS2Sy+Pckc5dHSk5kqpkGqFYfsunwmO4g/eaI=";
-  };
+    src = fetchurl {
+      name = "intel-mas-src-${version}";
+      url = "https://downloadmirror.intel.com/${intelDownloadId}/eng/Intel%C2%AE_MAS_CLI_Tool_Linux_${version}.zip";
+      hash = "sha256-hysXnHbS2Sy+Pckc5dHSk5kqpkGqFYfsunwmO4g/eaI=";
+    };
 
-  nativeBuildInputs = [
-    unzip
-    libarchive
-    autoPatchelfHook
-  ];
+    nativeBuildInputs = [
+      unzip
+      libarchive
+      autoPatchelfHook
+    ];
 
-  buildInputs = [
-  ];
+    buildInputs = [
+    ];
 
-  unpackPhase = ''
-    unzip $src
-    bsdtar -x -f intelmas-*.x86_64.rpm
-  '';
+    unpackPhase = ''
+      unzip $src
+      bsdtar -x -f intelmas-*.x86_64.rpm
+    '';
 
-  installPhase = ''
-    mkdir -p $out/opt/intelmas/
-    cp usr/bin/intelmas $out/opt/intelmas/
-    cp usr/lib/intelmas/*so* $out/opt/intelmas/
-    cp -r usr/lib/intelmas/FirmwareModules $out/opt/intelmas/
-  '';
+    installPhase = ''
+      mkdir -p $out/opt/intelmas/
+      cp usr/bin/intelmas $out/opt/intelmas/
+      cp usr/lib/intelmas/*so* $out/opt/intelmas/
+      cp -r usr/lib/intelmas/FirmwareModules $out/opt/intelmas/
+    '';
 
-  meta = with lib; {
-    homepage = "https://downloadcenter.intel.com/download/30379/Intel-Memory-and-Storage-Tool-CLI-Command-Line-Interface-";
-    description = "Drive management tool for Intel SSDs and Intel Optane Memory devices";
-    platforms = platforms.linux;
-    # maintainers = with maintainers; [ makefu ];
-  };
-}
+    meta = with lib; {
+      homepage = "https://downloadcenter.intel.com/download/30379/Intel-Memory-and-Storage-Tool-CLI-Command-Line-Interface-";
+      description = "Drive management tool for Intel SSDs and Intel Optane Memory devices";
+      platforms = platforms.linux;
+      # maintainers = with maintainers; [ makefu ];
+    };
+  }

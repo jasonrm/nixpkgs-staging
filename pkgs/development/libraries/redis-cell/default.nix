@@ -1,6 +1,7 @@
-{ lib
-, fetchFromGitHub
-, rustPlatform
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
 }:
 rustPlatform.buildRustPackage rec {
   pname = "redis-cell";
@@ -25,6 +26,6 @@ rustPlatform.buildRustPackage rec {
     description = "A Redis module that provides rate limiting in Redis as a single command.";
     license = licenses.mit;
     homepage = "https://github.com/brandur/redis-cell";
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

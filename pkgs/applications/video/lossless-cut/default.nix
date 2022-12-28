@@ -1,18 +1,16 @@
-{ lib
-, stdenv
-, fetchurl
-, appimageTools
-, makeWrapper
-, electron_8
-, gsettings-desktop-schemas
-, gtk3
-, unzip
-, nodePackages
-, ffmpeg
+{
+  lib,
+  stdenv,
+  fetchurl,
+  appimageTools,
+  makeWrapper,
+  electron,
+  gsettings-desktop-schemas,
+  gtk3,
+  unzip,
+  nodePackages,
+  ffmpeg,
 }:
-let
-  electron = electron_8;
-in
 stdenv.mkDerivation rec {
   pname = "lossless-cut";
   version = "3.30.0";
@@ -32,7 +30,7 @@ stdenv.mkDerivation rec {
   dontConfigure = true;
   dontBuild = true;
 
-  nativeBuildInputs = [ makeWrapper ];
+  nativeBuildInputs = [makeWrapper];
 
   installPhase = ''
     # runHook preInstall
@@ -65,7 +63,7 @@ stdenv.mkDerivation rec {
     description = "The swiss army knife of lossless video/audio editing";
     homepage = "https://github.com/mifi/lossless-cut";
     license = licenses.mit;
-    maintainer = [ "jason@mcneil.dev" ];
-    platforms = [ "x86_64-linux" ];
+    maintainer = ["jason@mcneil.dev"];
+    platforms = ["x86_64-linux"];
   };
 }
