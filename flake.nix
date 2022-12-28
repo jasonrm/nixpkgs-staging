@@ -28,7 +28,7 @@
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in {
-        legacyPackages = allPackages {inherit pkgs;};
+        legacyPackages = allPackages {inherit pkgs; lib = pkgs.lib; };
       }
     );
   in
@@ -37,6 +37,6 @@
       nixosModules.default = {
         imports = nixosModules;
       };
-      overlays.default = final: prev: allPackages {pkgs = prev;};
+      overlays.default = final: prev: allPackages { pkgs = prev; lib = prev.lib; };
     };
 }

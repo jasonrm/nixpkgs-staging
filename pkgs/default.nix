@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{ pkgs, lib, ...}: let
   phpExtensions = {
     packageOverrides = final: prev: {
       extensions =
@@ -8,7 +8,10 @@
         };
     };
   };
+  # libOverlay = lib // (import ./lib { inherit pkgs lib; });
 in rec {
+  customLib = pkgs.callPackage ./lib {};
+
   lossless-cut = pkgs.callPackage ./applications/video/lossless-cut {};
   godns = pkgs.callPackage ./applications/networking/dyndns/godns {};
   ddns = pkgs.callPackage ./applications/networking/dyndns/ddns {};
@@ -56,4 +59,21 @@ in rec {
   tere = pkgs.callPackage ./tools/system/tere {};
 
   mdbook-nix-eval = pkgs.callPackage ./tools/text/mdbook-nix-eval {};
+
+  yubikey-agent = pkgs.callPackage "${pkgs.path}/pkgs/tools/security/yubikey-agent" {
+    buildGoModule = args:
+      pkgs.buildGoModule (args
+        // {
+          src = pkgs.fetchFromGitHub {
+            owner = "jasonrm";
+            repo = "yubikey-agent";
+            rev = "a149d485be723f4f6ea43fef8edd24d215342d06";
+            # hash = lib.fakeHash;
+            hash = "sha256-via5KxpZ+gjOEc2k5tQWYdZniyuEFaK9HBWG408tuhM=";
+          };
+
+          vendorSha256 = "sha256-SnjbkDPVjAnCbM2nLqBsuaPZwOmvDTKiUbi/93BlWVQ=";
+          # vendorSha256 = lib.fakeSha256;
+        });
+  };
 }
