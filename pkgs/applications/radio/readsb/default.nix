@@ -5,6 +5,12 @@
   zlib,
   zstd,
   ncurses,
+  libusb1,
+  pkg-config,
+  rtl-sdr,
+  libbladeRF,
+  libiio,
+  libad9361,
 }:
 stdenv.mkDerivation rec {
   pname = "readsb";
@@ -18,14 +24,24 @@ stdenv.mkDerivation rec {
     # hash = lib.fakeHash;
   };
 
+  nativeBuildInputs = [ pkg-config ];
+
   buildInputs = [
     zlib
     zstd
     ncurses
+    libusb1
+    rtl-sdr
+    libbladeRF
+    libiio
+    libad9361
   ];
 
   makeFlags = [
     "READSB_VERSION=${version}"
+    "RTLSDR=yes"
+    "BLADERF=yes"
+    "PLUTOSDR=yes"
   ];
 
   installPhase = ''
