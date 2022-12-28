@@ -16,6 +16,7 @@ rec {
   ddns = pkgs.callPackage ./pkgs/applications/networking/dyndns/ddns { };
   transmission-rss-go = pkgs.callPackage ./pkgs/applications/networking/p2p/transmission-rss-go { };
   trunk-recorder = pkgs.callPackage ./pkgs/applications/radio/trunk-recorder { };
+  readsb = pkgs.callPackage ./pkgs/applications/radio/readsb { };
   glscopeclient = pkgs.callPackage ./pkgs/applications/science/electronics/glscopeclient {
     inherit ffts;
   };
