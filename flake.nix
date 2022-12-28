@@ -16,25 +16,27 @@
     utils,
     ...
   }: let
-    inherit (nixpkgs.lib) evalModules hasSuffix nameValuePair;
+    inherit (nixpkgs.lib) hasSuffix;
     inherit (nixpkgs.lib.filesystem) listFilesRecursive;
-    inherit (utils.lib) eachSystem eachDefaultSystem;
+    inherit (utils.lib) eachDefaultSystem;
 
     onlyNix = baseName: (hasSuffix ".nix" baseName);
     nixosModules = builtins.filter onlyNix (listFilesRecursive ./nixosModules);
 
-    packages = (eachDefaultSystem (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
-      in import ./pkgs { inherit pkgs; }
-    ));
+    allPackages = import ./pkgs;
+    packages = eachDefaultSystem (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        legacyPackages = allPackages {inherit pkgs;};
+      }
+    );
   in
-    {
-      inherit packages;
+    packages
+    // {
       nixosModules.default = {
         imports = nixosModules;
       };
-      overlays.default = final: prev: import ./pkgs {
-        pkgs = prev;
-      };
+      overlays.default = final: prev: allPackages {pkgs = prev;};
     };
 }
