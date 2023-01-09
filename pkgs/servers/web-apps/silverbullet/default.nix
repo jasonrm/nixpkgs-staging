@@ -26,6 +26,7 @@ stdenv.mkDerivation rec {
     makeWrapper ${deno}/bin/deno $out/bin/silverbullet \
         --add-flags run \
         --add-flags "--allow-all" \
+        --add-flags "--unstable" \
         --add-flags "--" \
         --add-flags $src
   '';
