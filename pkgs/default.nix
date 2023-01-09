@@ -1,4 +1,8 @@
-{ pkgs, lib, ...}: let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   phpExtensions = {
     packageOverrides = final: prev: {
       extensions =

@@ -1,6 +1,8 @@
-{ pkgs, lib }:
-let 
-	trivial = pkgs.callPackage ./trivial.nix {};
+{
+  pkgs,
+  lib,
+}: let
+  trivial = pkgs.callPackage ./trivial.nix {};
 in {
-	inherit (trivial) aliasToPackage;
+  inherit (trivial) aliasToPackage;
 }

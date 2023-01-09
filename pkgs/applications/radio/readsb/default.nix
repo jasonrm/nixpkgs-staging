@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
     # hash = lib.fakeHash;
   };
 
-  nativeBuildInputs = [ pkg-config ];
+  nativeBuildInputs = [pkg-config];
 
   buildInputs = [
     zlib

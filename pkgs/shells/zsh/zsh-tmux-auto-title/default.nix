@@ -1,5 +1,9 @@
-{ lib, stdenv, fetchFromGitHub, zsh }:
-
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  zsh,
+}:
 stdenv.mkDerivation rec {
   version = "git-07fd6d78";
   pname = "zsh-tmux-auto-title";
@@ -23,6 +27,6 @@ stdenv.mkDerivation rec {
     homepage = "https://github.com/mbenford/zsh-tmux-auto-title";
     license = licenses.mit;
     platforms = platforms.unix;
-    maintainers = [ "jason@mcneil.dev" ];
+    maintainers = ["jason@mcneil.dev"];
   };
 }

@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: with lib; let
+}:
+with lib; let
   cfg = config.services.readsb;
 in {
   options = with lib.types; {
