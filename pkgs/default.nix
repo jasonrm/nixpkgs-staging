@@ -47,6 +47,8 @@ in rec {
   etherdfs = pkgs.callPackage ./servers/etherdfs {};
   radius-mac = pkgs.callPackage ./servers/radius-mac {};
 
+  silverbullet = pkgs.callPackage ./servers/web-apps/silverbullet {};
+
   go-httpbin = pkgs.callPackage ./tools/networking/go-httpbin {};
 
   github-auth3 = pkgs.callPackage ./tools/system/github-auth3 {};
