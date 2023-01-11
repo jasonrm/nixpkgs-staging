@@ -16,6 +16,8 @@
 in rec {
   customLib = pkgs.callPackage ./lib {};
 
+  nodePackages = pkgs.nodePackages.extend (final: prev: (pkgs.callPackage ./development/node-packages {}));
+
   lossless-cut = pkgs.callPackage ./applications/video/lossless-cut {};
   godns = pkgs.callPackage ./applications/networking/dyndns/godns {};
   ddns = pkgs.callPackage ./applications/networking/dyndns/ddns {};

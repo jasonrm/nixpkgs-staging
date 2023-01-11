@@ -24,7 +24,7 @@
     nixosModules = builtins.filter onlyNix (listFilesRecursive ./nixosModules);
 
     allPackages = import ./pkgs;
-    packages = eachDefaultSystem (
+    perSystem = eachDefaultSystem (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in {
@@ -32,10 +32,15 @@
           inherit pkgs;
           lib = pkgs.lib;
         };
+        devShell = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            node2nix
+          ];
+        };
       }
     );
   in
-    packages
+    perSystem
     // {
       nixosModules.default = {
         nixpkgs.overlays = [
