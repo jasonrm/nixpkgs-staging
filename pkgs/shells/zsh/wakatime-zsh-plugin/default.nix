@@ -3,6 +3,8 @@
   stdenv,
   fetchFromGitHub,
   zsh,
+  wakatime,
+  makeWrapper,
 }:
 stdenv.mkDerivation rec {
   version = "git-69c6028b";
@@ -16,10 +18,15 @@ stdenv.mkDerivation rec {
     hash = "sha256-pA1VOkzbHQjmcI2skzB/OP5pXn8CFUz5Ok/GLC6KKXQ=";
   };
 
+  nativeBuildInputs = [makeWrapper];
+
   strictDeps = true;
 
   installPhase = ''
     install -D wakatime.plugin.zsh $out/share/zsh/${pname}/wakatime.plugin.zsh
+    substituteInPlace $out/share/zsh/${pname}/wakatime.plugin.zsh \
+      --replace '$HOME/.wakatime/wakatime-cli' \
+      '${wakatime}/bin/wakatime-cli'
   '';
 
   meta = with lib; {
