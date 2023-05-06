@@ -5,18 +5,18 @@
 }:
 buildGoModule rec {
   pname = "imageproxy";
-  version = "v0.10.0";
+  version = "v0.11.2";
 
   src = fetchFromGitHub {
     owner = "willnorris";
     repo = pname;
     rev = version;
-    sha256 = "105dzzvzxblxm621ngqynh7bb475j1xrdvyi6namvqbykqb0zmih";
-    # sha256 = lib.fakeSha256;
+    hash = "sha256-NDrsViOprpWFUkCKDPnZsFRuk0IxrtEhK4YrHH9KQcQ=";
+    # sha256 = lib.fakeHash;
   };
 
-  vendorSha256 = "02xmvfk9nfydwvzzhr040x17037mlgl4s7157ibp3nq0fgzw5bx0";
-  # vendorSha256 = lib.fakeSha256;
+  vendorHash = "sha256-u9CqQGmrOVqnEiXK4Dm6XPJXKfLKrcNy5w2QFQ8j8lM=";
+  # vendorSha256 = lib.fakeHash;
 
   subPackages = ["cmd/imageproxy"];
 
