@@ -7,18 +7,18 @@
 }:
 buildGoModule rec {
   pname = "go-httpbin";
-  version = "2.2.2";
+  version = "2.8.0";
 
   src = fetchFromGitHub {
     owner = "mccutchen";
     repo = pname;
     rev = "v${version}";
-    sha256 = "1pkyh5q9dbydgfym0lr41mj33qz2fh214xifv7r2qjrqf2khnyzw";
-    # sha256 = lib.fakeSha256;
+    hash = "sha256-Josk44k6e89g6Qq2iE1d2u5fVz1hHIXx/0lojBzLpQE=";
+    # hash = lib.fakeHash;
   };
 
-  vendorSha256 = "0sjjj9z1dhilhpc8pq4154czrb79z9cm044jvn75kxcjv6v5l2m5";
-  # vendorSha256 = lib.fakeSha256;
+  vendorHash = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo=";
+  # vendorHash = lib.fakeHash;
 
   subPackages = ["cmd/go-httpbin"];
 
