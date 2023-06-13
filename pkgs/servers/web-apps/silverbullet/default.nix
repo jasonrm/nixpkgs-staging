@@ -7,12 +7,12 @@
 }:
 stdenv.mkDerivation rec {
   pname = "silverbullet";
-  version = "0.2.7";
+  version = "0.3.2";
 
   src = fetchurl {
     url = "https://github.com/silverbulletmd/${pname}/releases/download/${version}/${pname}.js";
     # hash = lib.fakeHash;
-    hash = "sha256-r+JeA6OwciJtr/gDwfpYHaxCy0SXPMPs5BJTUN0rGGU=";
+    hash = "sha256-l5iU2w9Jw2pZP+S/K0eu9Phcvc1etpx+2bBCSgVYzSM=";
   };
 
   nativeBuildInputs = [
