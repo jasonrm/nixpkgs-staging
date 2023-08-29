@@ -6,7 +6,7 @@
   fetchFromGitHub,
 }: let
   pname = "spx";
-  version = "0.4.12";
+  version = "0.4.14";
 in
   buildPecl {
     inherit pname version;
@@ -15,7 +15,7 @@ in
       owner = "NoiseByNorthwest";
       repo = "php-spx";
       rev = "v${version}";
-      sha256 = "sha256-BHN1VtSUvr5Ctnvs0fi65HGBmJrKfTZ8aybRdkrDZMw=";
+      sha256 = "sha256-LdR3ilknSUuNTAb9wfIpNGdaR3uwd4C47nZYRzfTfx8=";
       # sha256 = lib.fakeSha256;
     };
 

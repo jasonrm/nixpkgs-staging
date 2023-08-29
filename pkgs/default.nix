@@ -36,6 +36,7 @@ in rec {
   php = pkgs.php.override phpExtensions;
   php80 = pkgs.php80.override phpExtensions;
   php81 = pkgs.php81.override phpExtensions;
+  php82 = pkgs.php82.override phpExtensions;
 
   redis-cell = pkgs.callPackage ./development/libraries/redis-cell {};
   ffts = pkgs.callPackage ./development/libraries/ffts {};
