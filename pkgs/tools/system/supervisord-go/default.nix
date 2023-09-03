@@ -6,7 +6,7 @@
 }:
 buildGoModule rec {
   pname = "supervisord-go";
-  version = "b1093f8906480aac2a7c82c8fa94e1e518fd6a62";
+  version = "c2cae38b7454d444f4cb8281d5367d50a55c0011";
 
   nativeBuildInputs = [makeWrapper];
 
@@ -14,8 +14,8 @@ buildGoModule rec {
     owner = "ochinchina";
     repo = "supervisord";
     rev = version;
-    hash = "sha256-MVxNi7r4n6Dsopz9FRFOpLpJbg+yfDoOePzHH4r1vv4=";
-    # hash = lib.fakeSha256;
+    hash = "sha256-aJ+/hyh6MxYQgnk+cE75TpQbMDYvOHHE6cntF8FflWQ=";
+    # hash = lib.fakeHash;
   };
 
   subPackages = ["."];
@@ -27,8 +27,8 @@ buildGoModule rec {
     wrapProgram $out/bin/supervisord --run "cd $out/share/supervisord"
   '';
 
-  vendorSha256 = "sha256-HHsCzSCC2fTbPR0Y/NpRnUKoH2DXu5J98aVIYw3Qw04=";
-  # vendorSha256 = lib.fakeSha256;
+  vendorHash = "sha256-Uo2CvjCsWAQlVe5swyabfK4ssKqw4DvZS2w4hsOkFGY=";
+  # vendorHash = lib.fakeHash;
 
   meta = with lib; {
     description = "a go-lang supervisor implementation";
