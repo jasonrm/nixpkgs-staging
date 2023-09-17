@@ -79,13 +79,13 @@ in rec {
           src = pkgs.fetchFromGitHub {
             owner = "jasonrm";
             repo = "yubikey-agent";
-            rev = "a149d485be723f4f6ea43fef8edd24d215342d06";
+            rev = "3eb039f4678752272ade0ea6de3cc218dc25f2a0";
             # hash = lib.fakeHash;
-            hash = "sha256-via5KxpZ+gjOEc2k5tQWYdZniyuEFaK9HBWG408tuhM=";
+            hash = "sha256-4Y8aMZHnclWWSO7tu2BBIC9hhi4gd9hou+Bvf4nnbPE=";
           };
 
-          vendorSha256 = "sha256-SnjbkDPVjAnCbM2nLqBsuaPZwOmvDTKiUbi/93BlWVQ=";
-          # vendorSha256 = lib.fakeSha256;
+          vendorHash = "sha256-+IRPs3wm3EvIgfQRpzcVpo2JBaFQlyY/RI1G7XfVS84=";
+          # vendorHash = lib.fakeHash;
         });
   };
 }
