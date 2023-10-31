@@ -70,6 +70,7 @@ in rec {
   machma = pkgs.callPackage ./tools/system/machma {};
   vlmcsd = pkgs.callPackage ./tools/system/vlmcsd {};
   tere = pkgs.callPackage ./tools/system/tere {};
+  hashname = pkgs.callPackage ./tools/system/hashname {};
 
   mdbook-nix-eval = pkgs.callPackage ./tools/text/mdbook-nix-eval {};
 
