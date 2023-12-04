@@ -71,6 +71,7 @@ in rec {
   vlmcsd = pkgs.callPackage ./tools/system/vlmcsd {};
   tere = pkgs.callPackage ./tools/system/tere {};
   hashname = pkgs.callPackage ./tools/system/hashname {};
+  systemd-tmpfiles = pkgs.callPackage ./tools/system/systemd-tmpfiles {};
 
   mdbook-nix-eval = pkgs.callPackage ./tools/text/mdbook-nix-eval {};
 
