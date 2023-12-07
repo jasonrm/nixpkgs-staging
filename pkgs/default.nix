@@ -32,6 +32,7 @@ in rec {
   frep = pkgs.callPackage ./development/tools/frep {};
   migrant = pkgs.callPackage ./development/tools/migrant {};
   names = pkgs.callPackage ./development/tools/names {};
+  git-clean = pkgs.callPackage ./development/tools/git-clean {};
 
   # TODO: Is there a better alternative to this?
   php = pkgs.php.override phpExtensions;
