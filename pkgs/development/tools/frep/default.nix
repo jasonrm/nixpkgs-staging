@@ -5,20 +5,18 @@
 }:
 buildGoModule rec {
   pname = "frep";
-  version = "v1.3.12";
+  version = "v1.3.13";
 
   src = fetchFromGitHub {
     owner = "subchen";
     repo = pname;
     rev = version;
-    sha256 = "0458jwghkg1lv4pxmaj4ifkkmvlpg5y82xxj8n1gyi5p4yhrh0kv";
-    # sha256 = lib.fakeSha256;
+    # hash = lib.fakeHash;
+    hash = "sha256-opdUjCWVwnHhpFJ0BbjNsQjw5454B7ctK2nP23yBpcQ=";
   };
 
-  vendorSha256 = "0yr7bq2z22vl09lwwbmjk77i431i0gnz9rf30sjrf5nn92l28saz";
-  # vendorSha256 = lib.fakeSha256;
-
-  # subPackages = ["cmd/imageproxy"];
+  # vendorHash = lib.fakeHash;
+  vendorHash = "sha256-X2kkqEjWFpelBsPl9O0DMQwSz5myLs5pAnQL8QVeJ3s=";
 
   meta = with lib; {
     description = "Generate file using template from environment, arguments, json/yaml/toml config files";
