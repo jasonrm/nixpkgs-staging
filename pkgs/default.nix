@@ -45,7 +45,6 @@ in rec {
   zsh-tmux-auto-title = pkgs.callPackage ./shells/zsh/zsh-tmux-auto-title {};
   wakatime-zsh-plugin = pkgs.callPackage ./shells/zsh/wakatime-zsh-plugin {};
 
-  bupstash = pkgs.callPackage ./tools/backup/bupstash {};
   imaptar = pkgs.callPackage ./tools/backup/imaptar {};
   imapbox = pkgs.callPackage ./tools/backup/imapbox {};
   up = pkgs.callPackage ./tools/backup/up {};
