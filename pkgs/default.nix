@@ -20,7 +20,6 @@ in rec {
 
   nomad-driver-nix = pkgs.callPackage ./applications/networking/cluster/nomad-driver-nix {};
   lossless-cut = pkgs.callPackage ./applications/video/lossless-cut {};
-  godns = pkgs.callPackage ./applications/networking/dyndns/godns {};
   ddns = pkgs.callPackage ./applications/networking/dyndns/ddns {};
   transmission-rss-go = pkgs.callPackage ./applications/networking/p2p/transmission-rss-go {};
   trunk-recorder = pkgs.callPackage ./applications/radio/trunk-recorder {};
