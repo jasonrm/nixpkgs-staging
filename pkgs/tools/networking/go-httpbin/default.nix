@@ -7,13 +7,13 @@
 }:
 buildGoModule rec {
   pname = "go-httpbin";
-  version = "2.9.2";
+  version = "2.13.0";
 
   src = fetchFromGitHub {
     owner = "mccutchen";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-dLHsv+DXlDxFdKcPVAlq3O47/1zXPVQx6czK+uzBv8M=";
+    hash = "sha256-7FdxLi1AprPkau+uh4BHmts/2YiotolXyWeSh/gd42I=";
     # hash = lib.fakeHash;
   };
 
