@@ -61,6 +61,7 @@ in rec {
 
   vsd = pkgs.callPackage ./tools/misc/vsd {};
 
+  arcanum = pkgs.callPackage ./tools/system/arcanum {};
   github-auth3 = pkgs.callPackage ./tools/system/github-auth3 {};
   pushnix = pkgs.callPackage ./tools/system/pushnix {};
   ssh-permit-a38 = pkgs.callPackage ./tools/system/ssh-permit-a38 {};
