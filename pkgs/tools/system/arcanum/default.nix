@@ -11,14 +11,14 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "arcanum";
-  version = "0.1.0";
+  version = "0.2.0";
 
   src = fetchFromGitHub {
     owner = "bitnixdev";
     repo = pname;
     fetchSubmodules = true;
     rev = "v${version}";
-    hash = "sha256-dGJM0w77LfBBD8tXi1ysdF6AYcKTRc0W35l0+bpJF5M=";
+    hash = "sha256-YQJruQqQPzLzcv3+SW4/j7vUdJeZeZNjIOULJ31WrEE=";
     # hash = lib.fakeHash;
   };
 
@@ -36,7 +36,7 @@ rustPlatform.buildRustPackage rec {
     darwin.apple_sdk.frameworks.SystemConfiguration
   ];
 
-  cargoHash = "sha256-If9YxAjblfyJ+N5pbZtwCrCcaGQCxjhu2HZ0VWWXMkM=";
+  cargoHash = "sha256-8JsRWgjrlVlZRjsD/vU/rXUfEPcTJOcGhQx7P2Xmaf0=";
   # cargoHash = lib.fakeHash;
 
   # Some checks expect to a git repo
