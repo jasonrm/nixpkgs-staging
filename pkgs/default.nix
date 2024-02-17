@@ -35,9 +35,8 @@ in rec {
 
   # TODO: Is there a better alternative to this?
   php = pkgs.php.override phpExtensions;
-  php80 = pkgs.php80.override phpExtensions;
-  php81 = pkgs.php81.override phpExtensions;
   php82 = pkgs.php82.override phpExtensions;
+  php83 = pkgs.php83.override phpExtensions;
 
   redis-cell = pkgs.callPackage ./development/libraries/redis-cell {};
   ffts = pkgs.callPackage ./development/libraries/ffts {};
