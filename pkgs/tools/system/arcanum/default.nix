@@ -11,36 +11,23 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "arcanum";
-  version = "0.2.2";
+  version = "0.3.0";
 
   src = fetchFromGitHub {
     owner = "bitnixdev";
     repo = pname;
     fetchSubmodules = true;
     rev = "v${version}";
-    hash = "sha256-KJsvU/5XOKQa0g6LdobdB6x3wXTijom1w9BP4acSToU=";
+    hash = "sha256-3IXwXQWKd4GIPZc/vgkMgTrq7ACS2RWt598NVWLqnL4=";
     # hash = lib.fakeHash;
   };
 
-  nativeBuildInputs = [ 
-    # protobuf
-    # pkg-config
-  ];
-
-  # buildNoDefaultFeatures = true;
-  # buildFeatures = [ "rustls-tls-webpki-roots" ];
-
-  buildInputs = [
-    # openssl
-  ] ++ lib.optionals stdenv.isDarwin [
+  buildInputs = lib.optionals stdenv.isDarwin [
     darwin.apple_sdk.frameworks.SystemConfiguration
   ];
 
-  cargoHash = "sha256-smxtQ73l8vOzMKdsKbTl+LYawEZBP+IqZ+iupKzmtlk=";
+  cargoHash = "sha256-oFpFdT2VM41QR01Zjktb3uRS92GunCeVhNcLD8ZKE48=";
   # cargoHash = lib.fakeHash;
-
-  # Some checks expect to a git repo
-  doCheck = false;
 
   meta = with lib; {
     homepage = "https://github.com/bitnixdev/arcanum";
