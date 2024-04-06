@@ -18,7 +18,7 @@ buildGoModule rec {
   };
 
   # vendorHash = "1han6mm61r0lksbyb81yrfp0pnsf5rw6lj9h6y6hxd5blqinskq5";
-  vendorHash = lib.fakeHash;
+  vendorHash = null;
 
   buildInputs =
     [
