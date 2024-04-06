@@ -15,7 +15,7 @@ buildGoModule rec {
     # hash = lib.fakeSha256;
   };
 
-  vendorSha256 = "sha256-mu80QFccIHGqzHfj5zueO+P74p4irFfmU+cDgmn8URQ=";
+  vendorHash = "sha256-mu80QFccIHGqzHfj5zueO+P74p4irFfmU+cDgmn8URQ=";
 
   meta = with lib; {
     description = "a go-lang supervisor implementation";

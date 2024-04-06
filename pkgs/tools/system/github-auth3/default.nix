@@ -17,8 +17,8 @@ buildGoModule rec {
     # sha256 = lib.fakeSha256;
   };
 
-  vendorSha256 = "19cxs3z4blr148xjjfysl1mv13dzgdg31jvxadfz0789cwlyv2ip";
-  # vendorSha256 = lib.fakeSha256;
+  vendorHash = "19cxs3z4blr148xjjfysl1mv13dzgdg31jvxadfz0789cwlyv2ip";
+  # vendorHash = lib.fakeHash;
 
   meta = with lib; {
     description = "Use Github for your SSH AuthorizedKeysCommand";

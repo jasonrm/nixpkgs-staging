@@ -16,7 +16,7 @@ buildGoModule rec {
   };
 
   vendorHash = "sha256-u9CqQGmrOVqnEiXK4Dm6XPJXKfLKrcNy5w2QFQ8j8lM=";
-  # vendorSha256 = lib.fakeHash;
+  # vendorHash = lib.fakeHash;
 
   subPackages = ["cmd/imageproxy"];
 

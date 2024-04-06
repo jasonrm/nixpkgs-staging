@@ -15,8 +15,8 @@ buildGoModule rec {
     # sha256 = lib.fakeSha256;
   };
 
-  vendorSha256 = "1bc31yvylzgw96ig0c74ysbk0f8rwfg46mbx71prknq92xz8xpjf";
-  # vendorSha256 = lib.fakeSha256;
+  vendorHash = "1bc31yvylzgw96ig0c74ysbk0f8rwfg46mbx71prknq92xz8xpjf";
+  # vendorHash = lib.fakeHash;
 
   meta = with lib; {
     description = "A simple utility for uploading stuff to BackBlaze's B2";

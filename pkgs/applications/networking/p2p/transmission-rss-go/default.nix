@@ -15,8 +15,8 @@ buildGoModule rec {
     # hash = lib.fakeHash;
   };
 
-  vendorSha256 = "sha256-qxgylezVgc3v9pmm9gswhK3xNtN/pj01ttgiFgtq1mA=";
-  # vendorSha256 = lib.fakeHash;
+  vendorHash = "sha256-qxgylezVgc3v9pmm9gswhK3xNtN/pj01ttgiFgtq1mA=";
+  # vendorHash = lib.fakeHash;
 
   # Checks are network based
   # doCheck = false;

@@ -17,9 +17,8 @@ buildGoModule rec {
     # sha256 = lib.fakeSha256;
   };
 
-  # vendorSha256 = "1han6mm61r0lksbyb81yrfp0pnsf5rw6lj9h6y6hxd5blqinskq5";
-  # vendorSha256 = lib.fakeSha256;
-  vendorSha256 = null;
+  # vendorHash = "1han6mm61r0lksbyb81yrfp0pnsf5rw6lj9h6y6hxd5blqinskq5";
+  vendorHash = lib.fakeHash;
 
   buildInputs =
     [

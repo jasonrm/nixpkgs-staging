@@ -17,9 +17,8 @@ buildGoModule rec {
     # sha256 = lib.fakeSha256;
   };
 
-  vendorSha256 = "1m2pqswhgizi3a3gk9c121ccwli05hh2ha76a9cmgy2gfy293dwh";
-  # vendorSha256 = lib.fakeSha256;
-  # vendorSha256 = null;
+  vendorHash = "1m2pqswhgizi3a3gk9c121ccwli05hh2ha76a9cmgy2gfy293dwh";
+  # vendorHash = lib.fakeHash;
 
   # buildInputs = [
   # ] ++ lib.optionals stdenv.isDarwin [ darwin.apple_sdk.frameworks.CoreFoundation ];

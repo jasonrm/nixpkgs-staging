@@ -15,8 +15,8 @@ buildGoModule rec {
     # sha256 = lib.fakeSha256;
   };
 
-  vendorSha256 = "sha256-ZQllOFz9IfjlqKYR0ydd3gXi2KGcRwuJRvMrnMGMjYs=";
-  # vendorSha256 = lib.fakeSha256;
+  vendorHash = "sha256-ZQllOFz9IfjlqKYR0ydd3gXi2KGcRwuJRvMrnMGMjYs=";
+  # vendorHash = lib.fakeHash;
 
   meta = with lib; {
     description = "MySQL slow log table to logfmt";

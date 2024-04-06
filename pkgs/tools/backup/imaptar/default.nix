@@ -15,8 +15,8 @@ buildGoModule rec {
     # sha256 = lib.fakeSha256;
   };
 
-  vendorSha256 = "0q8z6ym0sw5ajafymzkkbq0vzdjwwkrgr547xyai029m95vv1cgj";
-  # vendorSha256 = lib.fakeSha256;
+  vendorHash = "0q8z6ym0sw5ajafymzkkbq0vzdjwwkrgr547xyai029m95vv1cgj";
+  # vendorHash = lib.fakeHash;
 
   meta = with lib; {
     description = "utility to dump imap mailbox to a tarfile (maildir format)";
