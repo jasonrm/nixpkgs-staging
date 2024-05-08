@@ -54,7 +54,7 @@ in rec {
   slowlogfmt = pkgs.callPackage ./servers/monitoring/slowlogfmt {};
   etherdfs = pkgs.callPackage ./servers/etherdfs {};
   radius-mac = pkgs.callPackage ./servers/radius-mac {};
-  dynamodb-local = pkgs.callPackage ./servers/dynamodb-local {};
+  dynamodb = pkgs.callPackage ./servers/dynamodb {};
 
   silverbullet = pkgs.callPackage ./servers/web-apps/silverbullet {};
 

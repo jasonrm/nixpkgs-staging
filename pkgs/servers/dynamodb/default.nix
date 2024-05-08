@@ -9,7 +9,7 @@
   jdk17,
   lib,
 }: let
-  pname = "dynamodb_local";
+  pname = "dynamodb";
   version = "2.4.0";
   date = "2024-04-17";
 in
