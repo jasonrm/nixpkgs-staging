@@ -72,7 +72,6 @@ in rec {
   rnd64 = pkgs.callPackage ./tools/system/rnd64 {};
   machma = pkgs.callPackage ./tools/system/machma {};
   vlmcsd = pkgs.callPackage ./tools/system/vlmcsd {};
-  hashname = pkgs.callPackage ./tools/system/hashname {};
   systemd-tmpfiles = pkgs.callPackage ./tools/system/systemd-tmpfiles {};
 
   mdbook-nix-eval = pkgs.callPackage ./tools/text/mdbook-nix-eval {};
