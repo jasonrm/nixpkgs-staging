@@ -8,7 +8,6 @@
       extensions =
         prev.extensions
         // {
-          spx = pkgs.callPackage ./development/php-packages/spx {inherit (prev) buildPecl;};
           excimer = pkgs.callPackage ./development/php-packages/excimer {inherit (prev) buildPecl;};
         };
     };
