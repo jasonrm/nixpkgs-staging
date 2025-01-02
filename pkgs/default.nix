@@ -76,19 +76,19 @@ in rec {
 
   mdbook-nix-eval = pkgs.callPackage ./tools/text/mdbook-nix-eval {};
 
-  yubikey-agent = pkgs.callPackage "${pkgs.path}/pkgs/tools/security/yubikey-agent" {
+  yubikey-agent = pkgs.callPackage "${pkgs.path}/pkgs/by-name/yu/yubikey-agent/package.nix" {
     buildGoModule = args:
       pkgs.buildGoModule (args
         // {
           src = pkgs.fetchFromGitHub {
             owner = "jasonrm";
             repo = "yubikey-agent";
-            rev = "3eb039f4678752272ade0ea6de3cc218dc25f2a0";
+            rev = "9a64bd0ca5b05b8a685a0f83e2a7d0a01f7489dd";
             # hash = lib.fakeHash;
-            hash = "sha256-4Y8aMZHnclWWSO7tu2BBIC9hhi4gd9hou+Bvf4nnbPE=";
+            hash = "sha256-Wbm569DqVf7q8zg3lvWdgGaS6IFS9FSxfvD98zc/I14=";
           };
 
-          vendorHash = "sha256-+IRPs3wm3EvIgfQRpzcVpo2JBaFQlyY/RI1G7XfVS84=";
+          vendorHash = "sha256-ZQCxW+NDeYJofC9/9z8BpcRtBJ5p7hfQfsaX7iRIw5w=";
           # vendorHash = lib.fakeHash;
         });
   };
