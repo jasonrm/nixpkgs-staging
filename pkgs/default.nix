@@ -56,8 +56,6 @@ in rec {
   radius-mac = pkgs.callPackage ./servers/radius-mac {};
   dynamodb = pkgs.callPackage ./servers/dynamodb {};
 
-  silverbullet = pkgs.callPackage ./servers/web-apps/silverbullet {};
-
   go-httpbin = pkgs.callPackage ./tools/networking/go-httpbin {};
 
   vsd = pkgs.callPackage ./tools/misc/vsd {};
