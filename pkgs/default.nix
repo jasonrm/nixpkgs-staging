@@ -34,6 +34,7 @@ in rec {
   names = pkgs.callPackage ./development/tools/names {};
   git-clean = pkgs.callPackage ./development/tools/git-clean {};
   cargo-vcpkg = pkgs.callPackage ./development/tools/cargo-vcpkg {};
+  defmt = pkgs.callPackage ./development/tools/defmt {};
 
   # TODO: Is there a better alternative to this?
   php = pkgs.php.override phpExtensions;
