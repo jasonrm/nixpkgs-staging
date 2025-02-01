@@ -23,6 +23,7 @@ in rec {
   ddns = pkgs.callPackage ./applications/networking/dyndns/ddns {};
   transmission-rss-go = pkgs.callPackage ./applications/networking/p2p/transmission-rss-go {};
   trunk-recorder = pkgs.callPackage ./applications/radio/trunk-recorder {};
+  radio_tool = pkgs.callPackage ./applications/radio/radio_tool {};
   readsb = pkgs.callPackage ./applications/radio/readsb {};
   glscopeclient = pkgs.callPackage ./applications/science/electronics/glscopeclient {
     inherit ffts;
