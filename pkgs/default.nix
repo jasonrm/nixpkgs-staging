@@ -18,6 +18,7 @@ in rec {
 
   nodePackages = pkgs.nodePackages.extend (final: prev: (pkgs.callPackage ./development/node-packages {}));
 
+  ebur128 = pkgs.callPackage ./applications/audio/ebur128 {};
   nomad-driver-nix = pkgs.callPackage ./applications/networking/cluster/nomad-driver-nix {};
   lossless-cut = pkgs.callPackage ./applications/video/lossless-cut {};
   ddns = pkgs.callPackage ./applications/networking/dyndns/ddns {};
