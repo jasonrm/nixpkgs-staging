@@ -11,9 +11,9 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "Wind4";
     repo = "vlmcsd";
-    rev = "e599080486478e219cd065e141d6de050a450c27";
-    sha256 = "19qfw4l4b5vi03vmv9g5i7j32nifvz8sfada04mxqkrqdqxarb1q";
-    # hash = lib.fakeSha256;
+    rev = "70e03572b254688b8c3557f898e7ebd765d29ae1";
+    hash = "sha256-BEi47U0rdkO+AlQRpntsaTgm5A4CSwS6LuffAl2kIaw=";
+    # hash = lib.fakeHash;
   };
 
   installPhase = ''
