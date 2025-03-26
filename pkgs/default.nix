@@ -29,6 +29,7 @@ in rec {
     inherit ffts;
   };
 
+  cork = pkgs.callPackage ./cork {};
   frep = pkgs.callPackage ./development/tools/frep {};
   migrant = pkgs.callPackage ./development/tools/migrant {};
   names = pkgs.callPackage ./development/tools/names {};
