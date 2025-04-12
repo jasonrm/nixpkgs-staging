@@ -5,17 +5,17 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "systemd-tmpfiles";
-  version = "0.2.3";
+  version = "0.2.4";
 
   src = fetchFromGitHub {
     owner = "jasonrm";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-4r9idEzl5nIRAsQGPgLhqnZ5ypDyRt8oQMhBCNVuoU0=";
+    hash = "sha256-xorm4FkBW+ASSXjQ+Vr7Q2BlYeZEXU14sDZazMDdp7c=";
     # hash = lib.fakeHash;
   };
 
-  cargoHash = "sha256-jK0V6cofQKV+nPLenFfBPyxNq/uu3J72ur8LMH/nwLI=";
+  cargoHash = "sha256-7PJZOuP//9fhE4y8N4Fo85pXgBG/L3LKcillXSyDdmk=";
   # cargoHash = lib.fakeHash;
 
   meta = with lib; {
