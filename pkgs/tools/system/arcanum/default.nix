@@ -2,12 +2,8 @@
   lib,
   fetchFromGitHub,
   rustPlatform,
-  openssl,
-  protobuf,
-  pkg-config,
   stdenv,
   darwin,
-  gcc
 }:
 rustPlatform.buildRustPackage rec {
   pname = "arcanum";
