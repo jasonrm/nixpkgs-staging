@@ -22,6 +22,7 @@ rustPlatform.buildRustPackage rec {
     darwin.apple_sdk.frameworks.SystemConfiguration
   ];
 
+  useFetchCargoVendor = true;
   cargoHash = "sha256-X3y3bEFJ/UNU7aiZFZoCcd/V/wrDoQ5tNLwMfYPXRR4=";
   # cargoHash = lib.fakeHash;
 
