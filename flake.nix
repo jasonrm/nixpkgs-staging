@@ -10,49 +10,47 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    utils,
-    ...
-  }: let
-    inherit (nixpkgs.lib) hasSuffix;
-    inherit (nixpkgs.lib.filesystem) listFilesRecursive;
-    inherit (utils.lib) eachDefaultSystem;
+  outputs =
+    { nixpkgs, utils, ... }:
+    let
+      inherit (nixpkgs.lib) hasSuffix;
+      inherit (nixpkgs.lib.filesystem) listFilesRecursive;
+      inherit (utils.lib) eachDefaultSystem;
 
-    onlyNix = baseName: (hasSuffix ".nix" baseName);
-    nixosModules = builtins.filter onlyNix (listFilesRecursive ./nixosModules);
+      onlyNix = baseName: (hasSuffix ".nix" baseName);
+      nixosModules = builtins.filter onlyNix (listFilesRecursive ./nixosModules);
 
-    allPackages = import ./pkgs;
-    perSystem = eachDefaultSystem (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in {
-        legacyPackages = allPackages {
-          inherit pkgs;
-          lib = pkgs.lib;
-        };
-        devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            node2nix
-          ];
-        };
-      }
-    );
-  in
+      allPackages = import ./pkgs;
+      perSystem = eachDefaultSystem (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        {
+          legacyPackages = allPackages {
+            inherit pkgs;
+            lib = pkgs.lib;
+          };
+          devShell = pkgs.mkShell { buildInputs = with pkgs; [ node2nix ]; };
+        }
+      );
+    in
     perSystem
     // {
       nixosModules.default = {
         nixpkgs.overlays = [
-          (final: prev:
+          (
+            final: prev:
             allPackages {
               pkgs = prev;
               lib = prev.lib;
-            })
+            }
+          )
         ];
         imports = nixosModules;
       };
-      overlays.default = final: prev:
+      overlays.default =
+        final: prev:
         allPackages {
           pkgs = prev;
           lib = prev.lib;
