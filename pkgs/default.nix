@@ -3,7 +3,7 @@ let
   inherit (lib) listToAttrs hasSuffix;
   inherit (lib.filesystem) listFilesRecursive;
 
-  onlyDefaultNix = baseName: (hasSuffix "default.nix" baseName);
+  onlyDefaultNix = baseName: (hasSuffix "package.nix" baseName);
   packageDefinitions = builtins.filter onlyDefaultNix (listFilesRecursive ./.);
 
   packages = listToAttrs (
