@@ -16,10 +16,10 @@ rustPlatform.buildRustPackage rec {
   };
 
   # cargoHash = lib.fakeHash;
-  cargoHash = "sha256-Yhcah/9Vt3NfyFS/88q/hjdipRFanOv1NIqxxQTQvdE=";
+  cargoHash = "sha256-y5HgIrag9pRe+ypSXd3UlCJaLS+2E0K4EkaK4CfkCSA=";
 
   meta = {
     homepage = "https://github.com/jasonrm/cork";
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }
