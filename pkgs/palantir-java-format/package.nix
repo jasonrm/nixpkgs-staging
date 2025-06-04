@@ -5,7 +5,7 @@
 }:
 stdenv.mkDerivation rec {
   pname = "palantir-java-format";
-  version = "2.63.0";
+  version = "2.67.0";
   binary = fetchurl {
     # https://repo1.maven.org/maven2/com/palantir/javaformat/palantir-java-format-native/2.63.0/palantir-java-format-native-2.63.0-nativeImage-macos_aarch64.bin
     url = "https://repo1.maven.org/maven2/com/palantir/javaformat/palantir-java-format-native/${version}/palantir-java-format-native-${version}-nativeImage-macos_aarch64.bin";
