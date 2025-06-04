@@ -21,18 +21,12 @@ rustPlatform.buildRustPackage rec {
   cargoSha256 = "16llg6pcx3lq8szyl2adq0mibvdvdlavz2kv0cs7rzcmdsq356fn";
   # cargoSha256 = lib.fakeSha256;
 
-  buildInputs =
-    [
-      libiconv
-    ]
-    ++ lib.optionals stdenv.isDarwin [
-      darwin.apple_sdk.frameworks.CoreServices
-    ];
+  buildInputs = [ libiconv ];
 
   meta = with lib; {
     description = "A mdbook preprocessor designed to evaluate code blocks containing nix expressions";
     homepage = "https://jasonrm.github.io/mdbook-nix-eval/";
-    license = [licenses.mpl20];
+    license = [ licenses.mpl20 ];
     # maintainers = [ maintainers.havvy ];
   };
 }

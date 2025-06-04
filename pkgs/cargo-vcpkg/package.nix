@@ -16,15 +16,11 @@ rustPlatform.buildRustPackage rec {
     # hash = lib.fakeHash;
   };
 
-  # buildInputs = lib.optionals stdenv.isDarwin [
-  #   darwin.apple_sdk.frameworks.SystemConfiguration
-  # ];
-
   cargoHash = "sha256-Wr67t+jKmcwmFmOGrsgAgeQsEQ1P0XAENekZmXFbk8g=";
   # cargoHash = lib.fakeHash;
 
   meta = {
     homepage = "https://github.com/mcgoo/${pname}";
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }

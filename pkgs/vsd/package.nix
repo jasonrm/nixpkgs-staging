@@ -7,7 +7,7 @@
   pkg-config,
   stdenv,
   darwin,
-  gcc
+  gcc,
 }:
 rustPlatform.buildRustPackage rec {
   pname = "vsd";
@@ -22,7 +22,7 @@ rustPlatform.buildRustPackage rec {
     # hash = lib.fakeHash;
   };
 
-  nativeBuildInputs = [ 
+  nativeBuildInputs = [
     protobuf
     pkg-config
   ];
@@ -32,13 +32,10 @@ rustPlatform.buildRustPackage rec {
 
   buildInputs = [
     # openssl
-  ] ++ lib.optionals stdenv.isDarwin [
-    darwin.apple_sdk.frameworks.SystemConfiguration
-     gcc.cc.lib
-  ];
+  ] ++ lib.optionals stdenv.isDarwin [ gcc.cc.lib ];
 
   NIX_LDFLAGS = "-l${stdenv.cc.libcxx.cxxabi.libName}";
-  
+
   cargoHash = "sha256-amdc/NSJZ93kirfc7t87VFnifJiorLgwb23t2tfnEHo=";
   # cargoHash = lib.fakeHash;
 
@@ -49,6 +46,6 @@ rustPlatform.buildRustPackage rec {
     description = "Download video streams served over HTTP from websites, DASH (.mpd) and HLS (.m3u8) playlists";
     homepage = "https://github.com/clitic/vsd";
     license = licenses.mit;
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }

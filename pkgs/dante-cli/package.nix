@@ -7,7 +7,7 @@
   pkg-config,
   stdenv,
   darwin,
-  gcc
+  gcc,
 }:
 rustPlatform.buildRustPackage rec {
   pname = "dante-cli";
@@ -22,15 +22,11 @@ rustPlatform.buildRustPackage rec {
     hash = lib.fakeHash;
   };
 
-  # buildInputs = lib.optionals stdenv.isDarwin [
-  #   darwin.apple_sdk.frameworks.SystemConfiguration
-  # ];
-
   # cargoHash = "sha256-oFpFdT2VM41QR01Zjktb3uRS92GunCeVhNcLD8ZKE48=";
   cargoHash = lib.fakeHash;
 
   meta = with lib; {
     homepage = "https://github.com/IRSMsoso/dante-cli";
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }

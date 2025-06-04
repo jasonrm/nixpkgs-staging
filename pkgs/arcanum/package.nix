@@ -18,10 +18,6 @@ rustPlatform.buildRustPackage rec {
     # hash = lib.fakeHash;
   };
 
-  buildInputs = lib.optionals stdenv.isDarwin [
-    darwin.apple_sdk.frameworks.SystemConfiguration
-  ];
-
   useFetchCargoVendor = true;
   cargoHash = "sha256-X3y3bEFJ/UNU7aiZFZoCcd/V/wrDoQ5tNLwMfYPXRR4=";
   # cargoHash = lib.fakeHash;
@@ -29,6 +25,6 @@ rustPlatform.buildRustPackage rec {
   meta = with lib; {
     homepage = "https://github.com/bitnixdev/arcanum";
     license = licenses.mit;
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }
