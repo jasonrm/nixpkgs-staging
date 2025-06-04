@@ -15,7 +15,7 @@ rustPlatform.buildRustPackage rec {
     # hash = lib.fakeHash;
   };
 
-  cargoHash = "sha256-7ePRJFYjyzjR8TUL1yMMhqI3z76Rw+5cuX6NpyrdidY=";
+  cargoHash = "sha256-/SrAPsXufshZsF+HBGzBbgQOwWv8o7UHtZ5I3PdEWms=";
   # cargoHash = lib.fakeHash;
 
   # Some checks expect to a git repo
@@ -25,6 +25,6 @@ rustPlatform.buildRustPackage rec {
     description = "A Command Line Tool written in Rust for cleaning up local and remote Git branches";
     homepage = "https://github.com/mcasper/git-clean";
     license = licenses.mit;
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }
