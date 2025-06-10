@@ -9,7 +9,8 @@ stdenv.mkDerivation rec {
   binary = fetchurl {
     # https://repo1.maven.org/maven2/com/palantir/javaformat/palantir-java-format-native/2.63.0/palantir-java-format-native-2.63.0-nativeImage-macos_aarch64.bin
     url = "https://repo1.maven.org/maven2/com/palantir/javaformat/palantir-java-format-native/${version}/palantir-java-format-native-${version}-nativeImage-macos_aarch64.bin";
-    hash = "sha256-13frqGqhP7izF14FhVfLFPKJzv9Lvc5DqVXjGdTjdJ4=";
+    hash = "sha256-q4mf8HXr32UWnwnhdc6K7i4Podo1HBhGc1lXQ0hXuv0=";
+    # hash = lib.fakeHash;
   };
   dontUnpack = true;
   installPhase = ''
