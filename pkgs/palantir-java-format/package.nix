@@ -5,11 +5,11 @@
 }:
 stdenv.mkDerivation rec {
   pname = "palantir-java-format";
-  version = "2.67.0";
+  version = "2.68.0";
   binary = fetchurl {
     # https://repo1.maven.org/maven2/com/palantir/javaformat/palantir-java-format-native/2.63.0/palantir-java-format-native-2.63.0-nativeImage-macos_aarch64.bin
     url = "https://repo1.maven.org/maven2/com/palantir/javaformat/palantir-java-format-native/${version}/palantir-java-format-native-${version}-nativeImage-macos_aarch64.bin";
-    hash = "sha256-q4mf8HXr32UWnwnhdc6K7i4Podo1HBhGc1lXQ0hXuv0=";
+    hash = "sha256-38ZmwaRPyExPMjdpVROMqyqvbuVcD0qpFfbfHI4yvQc=";
     # hash = lib.fakeHash;
   };
   dontUnpack = true;
