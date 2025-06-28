@@ -16,20 +16,22 @@ rustPlatform.buildRustPackage rec {
     # hash = lib.fakeHash;
   };
 
-  cargoPatches = [./cargo.patch];
+  cargoPatches = [ ./cargo.patch ];
 
-  cargoBuildFlags = ["--example normalize"];
+  cargoBuildFlags = [ "--example normalize" ];
 
-  cargoHash = "sha256-V17xrYCHM11K0bJ8c+5RhhDveASpE5VvavRfiufVzzk=";
+  cargoHash = "sha256-L6wnXQMwfIjYsh8xfWj58o/kRYkSnLvJnuVtW5tAWNQ=";
 
-  postInstall = let
-    cargoTarget = rustPlatform.cargoInstallHook.targetSubdirectory;
-  in ''
-    install -D target/${cargoTarget}/release/examples/normalize $out/bin/normalize
-  '';
+  postInstall =
+    let
+      cargoTarget = rustPlatform.cargoInstallHook.targetSubdirectory;
+    in
+    ''
+      install -D target/${cargoTarget}/release/examples/normalize $out/bin/normalize
+    '';
 
   meta = {
     homepage = "https://github.com/sdroege/ebur128";
-    maintainer = ["jason@mcneil.dev"];
+    maintainer = [ "jason@mcneil.dev" ];
   };
 }
