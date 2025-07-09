@@ -2,24 +2,22 @@
   lib,
   fetchFromGitHub,
   rustPlatform,
-  stdenv,
-  darwin,
 }:
 rustPlatform.buildRustPackage rec {
   pname = "arcanum";
-  version = "0.3.1";
+  version = "0.4.0";
 
   src = fetchFromGitHub {
     owner = "bitnixdev";
     repo = pname;
     fetchSubmodules = true;
     rev = "v${version}";
-    hash = "sha256-jwEqA/cPIEpmoNpZ/sUU/B+9BLIOeBJDFq0OfTiQzP0=";
+    hash = "sha256-U+qDh7n9jQZTUhaUWbtJlf5JBUDJHKMzgW87mB6tD4c=";
     # hash = lib.fakeHash;
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-X3y3bEFJ/UNU7aiZFZoCcd/V/wrDoQ5tNLwMfYPXRR4=";
+  cargoHash = "sha256-jl23aHm/2i2cB8j6KrAeeNavmQQmaLdlGRK+A1HJz3s=";
   # cargoHash = lib.fakeHash;
 
   meta = with lib; {
