@@ -1,0 +1,4 @@
+- Use nix flakes
+- Add (but don't commit) any new files to git before trying to build
+- To build a package, run `nix build .#<package_name>`
+- If a hash isn't known, use `lib.fakeHash` and then `nix build .#<package_name>` to determine the actual hash
