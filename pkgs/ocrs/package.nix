@@ -11,10 +11,10 @@ rustPlatform.buildRustPackage rec {
     owner = "robertknight";
     repo = "ocrs";
     rev = "ocrs-v${version}";
-    hash = "sha256-WLzaCWojaa8WPtxg3D47HNjhpQYurU6Tg/Y0WYQJbXs=";
+    hash = "sha256-P+nOSlbcetxwEuuv64lmUEUB8fpBLUPd96+YBzD86u4=";
   };
 
-  cargoHash = "sha256-8KKkFksp7rgax3ahdEw4xZxqdRTdg4NKZrsO2avvmrg=";
+  cargoHash = "sha256-NA7NR2iV83UxJGlpBg6Zy+fMwe3WP8VQKi89lWWoN5c=";
 
   meta = with lib; {
     description = "CLI tool for extracting text from images using the ocrs OCR engine";
