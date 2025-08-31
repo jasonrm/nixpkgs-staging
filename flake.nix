@@ -3,8 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-
     utils.url = "github:numtide/flake-utils";
     flake-compat = {
       url = "github:edolstra/flake-compat";
@@ -14,7 +12,6 @@
 
   outputs = {
     nixpkgs,
-    nixpkgs-unstable,
     utils,
     ...
   }: let
@@ -32,7 +29,6 @@
       in {
         legacyPackages = allPackages {
           inherit pkgs;
-          nixpkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
           lib = pkgs.lib;
         };
         devShell = pkgs.mkShell {buildInputs = with pkgs; [node2nix];};
