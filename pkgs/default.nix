@@ -12,14 +12,6 @@ let
       value = pkgs.callPackage name { };
     }) packageDefinitions
   );
-
-  phpExtensions = {
-    packageOverrides = final: prev: {
-      extensions = prev.extensions // {
-        excimer = pkgs.callPackage ./php-excimer { inherit (prev) buildPecl; };
-      };
-    };
-  };
 in
 # libOverlay = lib // (import ./lib { inherit pkgs lib; });
 packages
@@ -27,10 +19,6 @@ packages
   customLib = pkgs.callPackage ./lib { };
 
   # nodePackages = pkgs.nodePackages.extend (final: prev: (pkgs.callPackage ./node-packages { }));
-
-  php = pkgs.php.override phpExtensions;
-  php82 = pkgs.php82.override phpExtensions;
-  php83 = pkgs.php83.override phpExtensions;
 
   yubikey-agent = pkgs.callPackage "${pkgs.path}/pkgs/by-name/yu/yubikey-agent/package.nix" {
     buildGoModule =
