@@ -15,7 +15,6 @@ rustPlatform.buildRustPackage rec {
     # hash = lib.fakeHash;
   };
 
-  useFetchCargoVendor = true;
   cargoHash = "sha256-7PJZOuP//9fhE4y8N4Fo85pXgBG/L3LKcillXSyDdmk=";
   # cargoHash = lib.fakeHash;
 

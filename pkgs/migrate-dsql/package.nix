@@ -15,14 +15,13 @@ rustPlatform.buildRustPackage rec {
     hash = "sha256-LMLYVq9Oiczt6uC5vpn86lKWf9AFmRjf16inZzMeZKI=";
   };
 
-  useFetchCargoVendor = true;
   cargoHash = "sha256-XUBxD4zxyRZhB/iStnA0JyZ7vAPnz/JDKQO/3fkplio=";
 
   meta = with lib; {
     description = "A database migration tool specifically designed for Amazon Aurora DSQL";
     homepage = "https://github.com/bitnixdev/migrate-dsql";
     license = licenses.mit;
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
     mainProgram = "migrate-dsql";
   };
 }

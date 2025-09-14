@@ -15,12 +15,11 @@ rustPlatform.buildRustPackage rec {
     hash = "sha256-VjXytwoJX8MpUDylN384Gorok839Mf+GwO9jJmiLea8=";
   };
 
-  useFetchCargoVendor = true;
   cargoHash = "sha256-DoBi0xd0JQ/a1H9U42hfWkugFUwXWc+EBgWWOMBxfNA=";
 
   meta = with lib; {
     homepage = "https://github.com/bitnixdev/arcanum";
     license = licenses.mit;
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

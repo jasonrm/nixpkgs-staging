@@ -14,13 +14,12 @@ rustPlatform.buildRustPackage rec {
     hash = "sha256-xmWF37mt0hwfSwoKFzJbLujHTsM9X1PDhWV9MuTP9/g=";
   };
 
-  useFetchCargoVendor = true;
   cargoHash = "sha256-g1kTQvrUvfakFJ3+BmFqFXlsH4uEiZK6KCEa0BG0mSI=";
 
   meta = with lib; {
     description = "A command line tool to rename media files based on titles from IMDb";
     homepage = "https://github.com/BurntSushi/imdb-rename";
     license = licenses.unlicense;
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }
