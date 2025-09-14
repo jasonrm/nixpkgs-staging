@@ -5,18 +5,17 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "systemd-tmpfiles";
-  version = "0.2.4";
+  version = "0.2.5";
 
   src = fetchFromGitHub {
     owner = "jasonrm";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-xorm4FkBW+ASSXjQ+Vr7Q2BlYeZEXU14sDZazMDdp7c=";
+    hash = "sha256-JQl4lHPW0hchYrZRcsqvPSrm7ebexHQI+bY7uTeTyeU=";
     # hash = lib.fakeHash;
   };
 
-  cargoHash = "sha256-7PJZOuP//9fhE4y8N4Fo85pXgBG/L3LKcillXSyDdmk=";
-  # cargoHash = lib.fakeHash;
+  cargoHash = "sha256-PYb6VCaQM8Umt+hEDpSe19SOOYnIAiDyuJVM69Ejudg=";
 
   meta = with lib; {
     description = "A limited and simple implementation of systemd-tmpfiles in Rust";
