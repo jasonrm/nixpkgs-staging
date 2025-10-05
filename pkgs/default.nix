@@ -3,25 +3,35 @@
   lib,
   ...
 }: let
-  inherit (lib) listToAttrs hasSuffix makeExtensible;
+  inherit (lib) listToAttrs hasSuffix makeExtensible functionArgs intersectAttrs;
   inherit (lib.filesystem) listFilesRecursive;
 
   onlyDefaultNix = baseName: (hasSuffix "package.nix" baseName);
   packageDefinitions = builtins.filter onlyDefaultNix (listFilesRecursive ./.);
+
+  # Filters arguments to only what the package function expects
+  callPackageFiltered = packageFile: extraArgs: let
+    packageFunc = import packageFile;
+    expectedArgs = functionArgs packageFunc;
+    # Merge pkgs and extraArgs, then filter to only expected arguments
+    allArgs = pkgs // extraArgs;
+    filteredArgs = intersectAttrs expectedArgs allArgs;
+  in
+    packageFunc filteredArgs;
 
   # Create a self-referential package set using makeExtensible
   packages = makeExtensible (self: let
     packageSet = listToAttrs (
       map (name: {
         name = builtins.baseNameOf (builtins.dirOf name);
-        value = pkgs.callPackage name self;
+        value = callPackageFiltered name self;
       })
       packageDefinitions
     );
   in
     packageSet
     // {
-      customLib = pkgs.callPackage ./lib self;
+      customLib = callPackageFiltered ./lib self;
 
       yubikey-agent = pkgs.callPackage "${pkgs.path}/pkgs/by-name/yu/yubikey-agent/package.nix" {
         buildGoModule = args:
