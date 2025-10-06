@@ -26,12 +26,9 @@ python3Packages.buildPythonApplication rec {
       --replace 'scripts=["bin/fio-plot", "bin/bench-fio"],' ""
   '';
 
-  build-system = with python3Packages; [
-    setuptools
-  ];
-
   dependencies = with python3Packages; [
     numpy
+    setuptools
     matplotlib
     pillow
     pyparsing
