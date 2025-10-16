@@ -2,6 +2,8 @@
   lib,
   fetchFromGitHub,
   rustPlatform,
+  wakatime-cli,
+  makeWrapper,
 }:
 rustPlatform.buildRustPackage rec {
   pname = "wakatime-ls";
@@ -15,6 +17,21 @@ rustPlatform.buildRustPackage rec {
   };
 
   cargoHash = "sha256-iOy61VEOgLzstcL44WEqB62J9Nmmg6UoKIGZyG1f4BA=";
+
+  nativeBuildInputs = [
+    makeWrapper
+  ];
+
+  postInstall = ''
+    wrapProgram $out/bin/wakatime-ls \
+      --prefix PATH : ${lib.makeBinPath [wakatime-cli]}
+  '';
+
+  doInstallCheck = true;
+
+  installCheckPhase = ''
+    $out/bin/wakatime-ls --health
+  '';
 
   meta = with lib; {
     description = "A dead-simple language server around wakatime-cli to send code tracking heartbeats";
