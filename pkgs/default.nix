@@ -38,14 +38,15 @@
           pkgs.buildGoModule (
             args
             // {
+              version = "0.1.6.2";
               src = pkgs.fetchFromGitHub {
                 owner = "jasonrm";
                 repo = "yubikey-agent";
-                rev = "9a64bd0ca5b05b8a685a0f83e2a7d0a01f7489dd";
-                hash = "sha256-Wbm569DqVf7q8zg3lvWdgGaS6IFS9FSxfvD98zc/I14=";
+                rev = "v0.1.6.2";
+                hash = "sha256-T/TpshANaV6Nsd5VainGXdm98LzB5O3tTDPBxY+3k+M=";
               };
 
-              vendorHash = "sha256-ZQCxW+NDeYJofC9/9z8BpcRtBJ5p7hfQfsaX7iRIw5w=";
+              vendorHash = "sha256-V0ztKsSGzlFc45AcCIEPiEgcWNsKE6u/KMbp8Z+zB8U=";
             }
           );
       };
