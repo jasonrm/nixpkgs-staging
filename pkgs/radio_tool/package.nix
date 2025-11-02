@@ -1,5 +1,4 @@
 {
-  lib,
   stdenv,
   fetchFromGitHub,
   libusb1,
@@ -8,14 +7,13 @@
 }:
 stdenv.mkDerivation rec {
   pname = "radio_tool";
-  version = "0.2.2+";
+  version = "0.3.0";
 
   src = fetchFromGitHub {
     owner = "v0l";
     repo = pname;
-    rev = "a1108b5af04aad706dc9988db7cddad6d91434f5";
-    hash = "sha256-Bs2Hkd12AsJ9wqHFGW9h5IEmK5R/rzkYjxbLzxdJWLQ=";
-    # hash = lib.fakeHash;
+    rev = "v${version}";
+    hash = "sha256-mdl0Z6bzuEbULXG0qW+Gfpk+adafOlXvPihUNJlwty8=";
   };
 
   nativeBuildInputs = [
