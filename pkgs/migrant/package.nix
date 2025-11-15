@@ -1,13 +1,11 @@
 {
-  stdenv,
   lib,
+  zlib,
   fetchFromGitHub,
   rustPlatform,
   postgresql,
   sqlite,
-  mariadb,
-  darwin,
-  libiconv,
+  mysql84,
   pkg-config,
   openssl,
 }:
@@ -19,28 +17,22 @@ rustPlatform.buildRustPackage rec {
     owner = "jaemk";
     repo = pname;
     rev = "846bfd7a5e2e52df92ce619246d4a1331ec5d515"; # untagged v0.14.0
-    sha256 = "1gqlai0wh7rgp62l6w0ipb2mhbmraknya04p3ngplcv1hn3cablj";
-    # sha256 = lib.fakeSha256;
+    hash = "sha256-ki7FhoVhM3qfHZcA5e1UuS5YxboRcEOFuS8fyEFUFL8=";
   };
 
-  cargoSha256 = "0pkih2piii7k524qn1irq1rb0l93pblmggxv6s1d57dn6krvm78z";
-  # cargoSha256 = lib.fakeSha256;
+  cargoHash = "sha256-R8Dmcp3FQnEO9d3bpBi0yMj5qGJbpebEAMKvFf2jo14=";
 
   nativeBuildInputs = [
     pkg-config
   ];
 
-  buildInputs =
-    [
-      postgresql.lib
-      openssl
-      sqlite
-      mariadb.client
-    ]
-    ++ lib.optionals stdenv.isDarwin [
-      darwin.apple_sdk.frameworks.Security
-      libiconv
-    ];
+  buildInputs = [
+    zlib
+    postgresql.lib
+    openssl
+    sqlite
+    mysql84.client
+  ];
 
   cargoBuildFlags = [
     "--features postgres,sqlite,mysql"
