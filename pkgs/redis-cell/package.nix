@@ -5,22 +5,16 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "redis-cell";
-  version = "v0.3.0";
+  version = "v0.4.0";
 
   src = fetchFromGitHub {
     owner = "brandur";
     repo = pname;
     rev = version;
-    sha256 = "1s240lgshign1jkdr6bs5jv1mr0wygpl3al6a9l9kqqlkyrwzbj7";
-    # sha256 = lib.fakeSha256;
+    sha256 = "sha256-CKdIbyuQlI8UDxVCh5sGO2Ll8h5DQjlkGiuE4SF2JyU=";
   };
 
-  cargoSha256 = "1b47nax0gdiw4ngh2d00rz6mnhm06f8pyydrbczyx0hkyxdv3zml";
-  # cargoSha256 = lib.fakeSha256;
-
-  cargoPatches = [
-    ./Cargo.lock.patch
-  ];
+  cargoHash = "sha256-48hIsQZdbF30jtlFkm2Ei+9uptmJD7IW+XRujf114mI=";
 
   meta = with lib; {
     description = "A Redis module that provides rate limiting in Redis as a single command.";
