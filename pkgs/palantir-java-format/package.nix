@@ -5,12 +5,11 @@
 }:
 stdenv.mkDerivation rec {
   pname = "palantir-java-format";
-  version = "2.68.0";
+  version = "2.83.0";
   binary = fetchurl {
     # https://repo1.maven.org/maven2/com/palantir/javaformat/palantir-java-format-native/2.63.0/palantir-java-format-native-2.63.0-nativeImage-macos_aarch64.bin
     url = "https://repo1.maven.org/maven2/com/palantir/javaformat/palantir-java-format-native/${version}/palantir-java-format-native-${version}-nativeImage-macos_aarch64.bin";
-    hash = "sha256-38ZmwaRPyExPMjdpVROMqyqvbuVcD0qpFfbfHI4yvQc=";
-    # hash = lib.fakeHash;
+    hash = "sha256-FG2HWfKt5TW5nbQ9c7i7curvZheuNvApigyNYLeabhI=";
   };
   dontUnpack = true;
   installPhase = ''
@@ -19,7 +18,7 @@ stdenv.mkDerivation rec {
   '';
   meta = {
     description = "A modern, lambda-friendly, 120 character Java formatter.";
-    sourceProvenance = with lib.sourceTypes; [ binaryBytecode ];
+    sourceProvenance = with lib.sourceTypes; [binaryBytecode];
     license = lib.licenses.asl20;
     platforms = lib.platforms.darwin;
     homepage = "https://github.com/palantir/palantir-java-format";
