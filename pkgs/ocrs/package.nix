@@ -5,16 +5,20 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "ocrs";
-  version = "0.10.4";
+  version = "0.12.1";
 
   src = fetchFromGitHub {
     owner = "robertknight";
     repo = "ocrs";
     rev = "ocrs-v${version}";
-    hash = "sha256-P+nOSlbcetxwEuuv64lmUEUB8fpBLUPd96+YBzD86u4=";
+    hash = "sha256-ow7e4KulCKVPlKTTBsSBmbyNwiOQxBsnK3Fk4uuRpQg=";
   };
 
-  cargoHash = "sha256-NA7NR2iV83UxJGlpBg6Zy+fMwe3WP8VQKi89lWWoN5c=";
+  cargoHash = "sha256-w57NPTMu9DkEv2vT7KShgzD96Lp5/suIxbSs4Twq2lQ=";
+
+  cargoBuildFlags = [
+    "--features clipboard"
+  ];
 
   meta = with lib; {
     description = "CLI tool for extracting text from images using the ocrs OCR engine";
