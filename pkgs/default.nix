@@ -23,7 +23,7 @@
   packages = makeExtensible (self: let
     packageSet = listToAttrs (
       map (name: {
-        name = builtins.baseNameOf (builtins.dirOf name);
+        name = baseNameOf (dirOf name);
         value = callPackageFiltered name self;
       })
       packageDefinitions
@@ -35,8 +35,12 @@
 
       yubikey-agent = pkgs.callPackage "${pkgs.path}/pkgs/by-name/yu/yubikey-agent/package.nix" {
         buildGoModule = args:
-          pkgs.buildGoModule (
-            args
+          let
+            # Handle both legacy (attrset) and new (finalAttrs functor) calling conventions
+            resolvedArgs = if builtins.isFunction args then args else (_finalAttrs: args);
+          in
+          pkgs.buildGoModule (finalAttrs:
+            resolvedArgs finalAttrs
             // {
               version = "0.1.6.2";
               src = pkgs.fetchFromGitHub {
