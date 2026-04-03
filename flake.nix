@@ -8,11 +8,16 @@
       url = "github:edolstra/flake-compat";
       flake = false;
     };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     nixpkgs,
     utils,
+    rust-overlay,
     ...
   }: let
     inherit (nixpkgs.lib) hasSuffix;
@@ -30,6 +35,7 @@
           config = {
             allowUnfree = true;
           };
+          overlays = [ rust-overlay.overlays.default ];
         };
       in {
         legacyPackages = allPackages {
@@ -44,6 +50,7 @@
     // {
       nixosModules.default = {
         nixpkgs.overlays = [
+          rust-overlay.overlays.default
           (
             final: prev:
               allPackages {
