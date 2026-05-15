@@ -1,6 +1,7 @@
 ## Example Use
 
 **flake.nix**
+
 ```nix
 {
   inputs = {
@@ -31,6 +32,7 @@
 ```
 
 **modules/pkgs.nix**
+
 ```nix
 { system, nixpkgs, staging, ... }:
 {

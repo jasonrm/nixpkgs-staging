@@ -35,14 +35,14 @@
           config = {
             allowUnfree = true;
           };
-          overlays = [ rust-overlay.overlays.default ];
+          overlays = [rust-overlay.overlays.default];
         };
       in {
         legacyPackages = allPackages {
           inherit pkgs;
           lib = pkgs.lib;
         };
-        devShell = pkgs.mkShell {buildInputs = with pkgs; [node2nix];};
+        devShell = pkgs.mkShell {};
       }
     );
   in

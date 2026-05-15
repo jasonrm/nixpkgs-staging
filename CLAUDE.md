@@ -48,4 +48,3 @@ Each package lives in `pkgs/<name>/package.nix`. The system auto-discovers all `
 
 - `nixosModules/services/` — NixOS service module definitions
 - `pkgs/lib/` — custom helpers (e.g. `aliasToPackage` for creating shell script aliases)
-- `node-packages/` — node2nix generated files (dev shell includes `node2nix`)
