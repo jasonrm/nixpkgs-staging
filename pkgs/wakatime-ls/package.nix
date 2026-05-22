@@ -7,16 +7,16 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "wakatime-ls";
-  version = "0.2.0";
+  version = "0.2.2";
 
   src = fetchFromGitHub {
     owner = "mrnossiom";
     repo = "wakatime-ls";
     rev = "v${version}";
-    hash = "sha256-rNmHn8SgJJ/MLOwN/PoSFeVf4jfL5Qj2yJ+HcfjMZIk=";
+    hash = "sha256-r0XvD9ZTnyEE1W95iOBHeXshxce1MSdq1OYFJ8pCsTU=";
   };
 
-  cargoHash = "sha256-iOy61VEOgLzstcL44WEqB62J9Nmmg6UoKIGZyG1f4BA=";
+  cargoHash = "sha256-KLQDu7mQgxq4HxrJ4cX9WEdDlmuakPYZOdTzL9Ot4Wg=";
 
   nativeBuildInputs = [
     makeWrapper
