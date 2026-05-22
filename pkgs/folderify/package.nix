@@ -7,16 +7,16 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "folderify";
-  version = "4.1.1";
+  version = "4.1.3";
 
   src = fetchFromGitHub {
     owner = "lgarron";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-mC4Fc/gY6iqmgrghaXu6xAaITs+nrMBUdICoeq0Az6g=";
+    hash = "sha256-Gq6rXqvvnFmAzKxnoJ70x2zLA4h/P0hjMMldNMc6jtI=";
   };
 
-  cargoHash = "sha256-W1H7F8LNJ8Z9Ir/eDianp2GSr68maziT/4GxkM/5HFc=";
+  cargoHash = "sha256-XyNcWwqy4w+b/epvjx6Jt7IBoZgxfowLOWeC6pMvaVo=";
 
   nativeBuildInputs = [ pkg-config ];
 
