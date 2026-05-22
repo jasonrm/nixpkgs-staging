@@ -5,16 +5,16 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "zerostack";
-  version = "1.0.0";
+  version = "1.2.2";
 
   src = fetchFromGitHub {
     owner = "gi-dellav";
     repo = "zerostack";
     rev = "v${version}";
-    hash = "sha256-pZrFvBWEoMbLkQo7HKd7zYlQ2mXI5+T4sTdPg8icNUs=";
+    hash = "sha256-nqz4SKCtNPJLaHGU1nZS8neH0dVoKjLOdC0Gjfs53pE=";
   };
 
-  cargoHash = "sha256-KfAXQCch7vUFnUlsgNiv12kOJD1/ixyWylcI1vnuNXM=";
+  cargoHash = "sha256-AI7CIZNpwql78QIFitNimLFi+FGeOO3espXFkEyHRjI=";
 
   meta = {
     description = "Minimalistic coding agent written in Rust, optimized for memory footprint and performance";
