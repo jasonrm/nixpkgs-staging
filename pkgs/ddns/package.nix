@@ -5,18 +5,16 @@
 }:
 buildGoModule rec {
   pname = "ddns";
-  version = "v1.7.0";
+  version = "2.0.6";
 
   src = fetchFromGitHub {
     owner = "milgradesec";
     repo = pname;
-    rev = version;
-    sha256 = "1cdx22x8d8vncx7li6y4wynfx5j9d9kl9n0frbwvwrpzb7ly35lp";
-    # sha256 = lib.fakeSha256;
+    rev = "v${version}";
+    hash = "sha256-c4uidQViwvVzOFWqdKtOmquVQ7XIDGfmS+KYhLuKRLU=";
   };
 
-  vendorHash = "1hsj534859x1pz94917dfn5myyp81hjj08y67czf4agmk2n1g43s";
-  # vendorHash = lib.fakeHash;
+  vendorHash = "sha256-uYbtEAlsy6HC5jGj0xw9os+tWK6/oXBtJutlBtoQ08M=";
 
   # Checks are network based
   # doCheck = false;
