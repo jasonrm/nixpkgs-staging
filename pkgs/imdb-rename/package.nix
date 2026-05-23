@@ -5,7 +5,7 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "imdb-rename";
-  version = "0.0.0-unstable-2024-09-25";
+  version = "0.1.6";
 
   src = fetchFromGitHub {
     owner = "BurntSushi";
