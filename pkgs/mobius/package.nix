@@ -5,16 +5,16 @@
 }:
 buildGoModule rec {
   pname = "mobius";
-  version = "0.18.4";
+  version = "0.21.0";
 
   src = fetchFromGitHub {
     owner = "jhalter";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-M5MuRSSRjT6gMe3Re8vpmQE/SONdhdH/zbtlN6C6G6Y=";
+    hash = "sha256-Bm5GKqJsXuodZ2up9kz8ixlY/Iz/Z3OAy6WfbGhQ2ww=";
   };
 
-  vendorHash = "sha256-ohN1iWdjrXc4ShyRMxuQAMtDjVyl9rUigJ1Hr/Qbf4s=";
+  vendorHash = "sha256-/TaKTvkNi67iASTApxWfIy9C8SnNl6boVoQT8YE3SFg=";
 
   subPackages = ["cmd/mobius-hotline-server"];
 
