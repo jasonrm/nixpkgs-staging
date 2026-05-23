@@ -7,7 +7,7 @@
   makeWrapper,
 }:
 stdenv.mkDerivation rec {
-  version = "git-69c6028b";
+  version = "0.1.1";
   pname = "wakatime-zsh-plugin";
 
   src = fetchFromGitHub {
