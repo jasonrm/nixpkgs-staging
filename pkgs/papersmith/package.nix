@@ -5,17 +5,17 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "papersmith";
-  version = "0.5.0";
+  version = "0.7.0";
 
   src = fetchFromGitHub {
     owner = "benletchford";
     repo = pname;
     fetchSubmodules = true;
     rev = "v${version}";
-    hash = "sha256-h462e8pP1kl43vnm4t4wY8OGSNeyg95W4G6tkftPvR0=";
+    hash = "sha256-IuXvWW0IfKhlJPHVzqt60pVglZ0FT2dzFdvkSurYbMM=";
   };
 
-  cargoHash = "sha256-C8UF4TWajsPup2DOkCdj29sD+Mx8j0crtayhProxoJs=";
+  cargoHash = "sha256-+ACeKiV2heVlxT3akiP68P++zmIOV/kMPjT31S8KLi0=";
 
   meta = with lib; {
     description = "An AI-powered PDF renamer that uses OpenAI's models to intelligently rename PDF documents based on their content";
