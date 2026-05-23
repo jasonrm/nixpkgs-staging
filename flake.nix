@@ -37,11 +37,18 @@
           };
           overlays = [rust-overlay.overlays.default];
         };
-      in {
-        legacyPackages = allPackages {
+      in let
+        legacyPkgs = allPackages {
           inherit pkgs;
           lib = pkgs.lib;
         };
+      in {
+        # Expose under both legacyPackages (for overlays / backward compat)
+        # and packages (for `nix build .#<name>`, `nix flake show`,
+        # `nix-update --flake <name>`, etc.)
+        inherit legacyPkgs;
+        legacyPackages = legacyPkgs;
+        packages = legacyPkgs;
         devShell = pkgs.mkShell {};
       }
     );
