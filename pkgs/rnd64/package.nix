@@ -6,13 +6,13 @@
 }:
 stdenv.mkDerivation rec {
   pname = "rnd64";
-  version = "v0.41";
+  version = "v0.42";
 
   src = fetchFromGitHub {
     owner = "Tinram";
     repo = "RND64";
     rev = version;
-    hash = "sha256-cfvWr5ZO4CAZVqZTdf+eF2j9cV1XK5B1x91DwtUGsAo=";
+    hash = "sha256-i5P9PzgU4y3WzInUmoc7wm9S72N32WYO3LezQYZ1jnE=";
   };
 
   CFLAGS = [
