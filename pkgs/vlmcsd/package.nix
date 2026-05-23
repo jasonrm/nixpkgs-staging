@@ -6,7 +6,7 @@
 }:
 stdenv.mkDerivation rec {
   pname = "vlmcsd";
-  version = "1113";
+  version = "svn1113";
 
   src = fetchFromGitHub {
     owner = "Wind4";
