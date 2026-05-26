@@ -7,7 +7,7 @@
   pkg-config,
   stdenv,
   darwin,
-  gcc
+  gcc,
 }:
 rustPlatform.buildRustPackage rec {
   pname = "sheety";
@@ -27,7 +27,7 @@ rustPlatform.buildRustPackage rec {
     # pkg-config
   ];
 
-  cargoPatches = [ ./cargo-lock.patch ];
+  cargoPatches = [./cargo-lock.patch];
 
   # buildNoDefaultFeatures = true;
   # buildFeatures = [ "rustls-tls-webpki-roots" ];

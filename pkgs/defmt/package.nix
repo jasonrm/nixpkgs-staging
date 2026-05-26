@@ -35,6 +35,6 @@ rustPlatform.buildRustPackage rec {
 
   meta = {
     homepage = "https://github.com/knurling-rs/${pname}";
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

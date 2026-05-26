@@ -18,15 +18,15 @@ rustPlatform.buildRustPackage rec {
 
   cargoHash = "sha256-XyNcWwqy4w+b/epvjx6Jt7IBoZgxfowLOWeC6pMvaVo=";
 
-  nativeBuildInputs = [ pkg-config ];
+  nativeBuildInputs = [pkg-config];
 
-  buildInputs = [ imagemagick ];
+  buildInputs = [imagemagick];
 
   meta = with lib; {
     description = "Generate pixel-perfect macOS folder icons in the native style";
     homepage = "https://github.com/lgarron/folderify";
     license = licenses.mit;
-    maintainers = [ "jason@mcneil.dev" ];
+    maintainers = ["jason@mcneil.dev"];
     platforms = platforms.darwin;
   };
 }

@@ -6,7 +6,6 @@
   pkg-config,
   git,
   jujutsu,
-
 }:
 rustPlatform.buildRustPackage rec {
   pname = "jj-spr";
@@ -22,7 +21,7 @@ rustPlatform.buildRustPackage rec {
 
   cargoHash = "sha256-bAWDwWSZWeegeJ7DY/PyCWQ9oYMn9A+PLAGkkmwzd8A=";
 
-  buildInputs = [ zlib ];
+  buildInputs = [zlib];
 
   nativeBuildInputs = [
     pkg-config
@@ -32,6 +31,6 @@ rustPlatform.buildRustPackage rec {
 
   meta = {
     homepage = "https://github.com/LucioFranco/${pname}";
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

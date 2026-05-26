@@ -21,6 +21,6 @@ rustPlatform.buildRustPackage rec {
 
   meta = {
     homepage = "https://github.com/mcgoo/${pname}";
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

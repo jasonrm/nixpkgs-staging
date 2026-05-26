@@ -28,11 +28,13 @@ rustPlatform.buildRustPackage rec {
   ];
 
   buildNoDefaultFeatures = true;
-  buildFeatures = [ "rustls-tls-webpki-roots" ];
+  buildFeatures = ["rustls-tls-webpki-roots"];
 
-  buildInputs = [
-    # openssl
-  ] ++ lib.optionals stdenv.isDarwin [ gcc.cc.lib ];
+  buildInputs =
+    [
+      # openssl
+    ]
+    ++ lib.optionals stdenv.isDarwin [gcc.cc.lib];
 
   NIX_LDFLAGS = "-l${stdenv.cc.libcxx.cxxabi.libName}";
 
@@ -46,6 +48,6 @@ rustPlatform.buildRustPackage rec {
     description = "Download video streams served over HTTP from websites, DASH (.mpd) and HLS (.m3u8) playlists";
     homepage = "https://github.com/clitic/vsd";
     license = licenses.mit;
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

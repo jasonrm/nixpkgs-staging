@@ -20,6 +20,6 @@ rustPlatform.buildRustPackage rec {
 
   meta = {
     homepage = "https://github.com/jasonrm/cork";
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

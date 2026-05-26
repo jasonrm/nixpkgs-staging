@@ -34,24 +34,27 @@
       customLib = callPackageFiltered ./lib self;
 
       yubikey-agent = pkgs.callPackage "${pkgs.path}/pkgs/by-name/yu/yubikey-agent/package.nix" {
-        buildGoModule = args:
-          let
-            # Handle both legacy (attrset) and new (finalAttrs functor) calling conventions
-            resolvedArgs = if builtins.isFunction args then args else (_finalAttrs: args);
-          in
-          pkgs.buildGoModule (finalAttrs:
-            resolvedArgs finalAttrs
-            // {
-              version = "0.1.6.2";
-              src = pkgs.fetchFromGitHub {
-                owner = "jasonrm";
-                repo = "yubikey-agent";
-                rev = "v0.1.6.2";
-                hash = "sha256-T/TpshANaV6Nsd5VainGXdm98LzB5O3tTDPBxY+3k+M=";
-              };
+        buildGoModule = args: let
+          # Handle both legacy (attrset) and new (finalAttrs functor) calling conventions
+          resolvedArgs =
+            if builtins.isFunction args
+            then args
+            else (_finalAttrs: args);
+        in
+          pkgs.buildGoModule (
+            finalAttrs:
+              resolvedArgs finalAttrs
+              // {
+                version = "0.1.6.2";
+                src = pkgs.fetchFromGitHub {
+                  owner = "jasonrm";
+                  repo = "yubikey-agent";
+                  rev = "v0.1.6.2";
+                  hash = "sha256-T/TpshANaV6Nsd5VainGXdm98LzB5O3tTDPBxY+3k+M=";
+                };
 
-              vendorHash = "sha256-V0ztKsSGzlFc45AcCIEPiEgcWNsKE6u/KMbp8Z+zB8U=";
-            }
+                vendorHash = "sha256-V0ztKsSGzlFc45AcCIEPiEgcWNsKE6u/KMbp8Z+zB8U=";
+              }
           );
       };
     });

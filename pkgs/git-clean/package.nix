@@ -25,6 +25,6 @@ rustPlatform.buildRustPackage rec {
     description = "A Command Line Tool written in Rust for cleaning up local and remote Git branches";
     homepage = "https://github.com/mcasper/git-clean";
     license = licenses.mit;
-    maintainer = [ "jason@mcneil.dev" ];
+    maintainer = ["jason@mcneil.dev"];
   };
 }

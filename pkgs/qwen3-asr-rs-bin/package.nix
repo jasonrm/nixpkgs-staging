@@ -4,8 +4,7 @@
   fetchzip,
   autoPatchelfHook,
   makeWrapper,
-}:
-let
+}: let
   version = "0.2.0";
 
   assets = {
@@ -25,59 +24,59 @@ let
 
   platform = assets.${stdenv.hostPlatform.system} or (throw "Unsupported platform: ${stdenv.hostPlatform.system}");
 in
-stdenv.mkDerivation {
-  pname = "qwen3-asr-rs-bin";
-  inherit version;
+  stdenv.mkDerivation {
+    pname = "qwen3-asr-rs-bin";
+    inherit version;
 
-  src = fetchzip {
-    url = "https://github.com/second-state/qwen3_asr_rs/releases/download/v${version}/${platform.asset}.zip";
-    hash = platform.hash;
-    stripRoot = true;
-  };
+    src = fetchzip {
+      url = "https://github.com/second-state/qwen3_asr_rs/releases/download/v${version}/${platform.asset}.zip";
+      hash = platform.hash;
+      stripRoot = true;
+    };
 
-  nativeBuildInputs =
-    lib.optionals stdenv.isLinux [ autoPatchelfHook ]
-    ++ [ makeWrapper ];
+    nativeBuildInputs =
+      lib.optionals stdenv.isLinux [autoPatchelfHook]
+      ++ [makeWrapper];
 
-  buildInputs = lib.optionals stdenv.isLinux [
-    stdenv.cc.cc.lib
-  ];
+    buildInputs = lib.optionals stdenv.isLinux [
+      stdenv.cc.cc.lib
+    ];
 
-  dontConfigure = true;
-  dontBuild = true;
+    dontConfigure = true;
+    dontBuild = true;
 
-  installPhase = ''
-    runHook preInstall
+    installPhase = ''
+      runHook preInstall
 
-    mkdir -p $out/bin $out/share/qwen3-asr-rs/tokenizers
+      mkdir -p $out/bin $out/share/qwen3-asr-rs/tokenizers
 
-    cp asr $out/bin/
-    cp asr-server $out/bin/
+      cp asr $out/bin/
+      cp asr-server $out/bin/
 
-    cp tokenizers/*.json $out/share/qwen3-asr-rs/tokenizers/
+      cp tokenizers/*.json $out/share/qwen3-asr-rs/tokenizers/
 
-    ${lib.optionalString stdenv.isDarwin ''
-      cp mlx.metallib $out/bin/
-    ''}
+      ${lib.optionalString stdenv.isDarwin ''
+        cp mlx.metallib $out/bin/
+      ''}
 
-    ${lib.optionalString stdenv.isLinux ''
-      mkdir -p $out/lib
-      cp -r libtorch/lib/*.so* $out/lib/
+      ${lib.optionalString stdenv.isLinux ''
+        mkdir -p $out/lib
+        cp -r libtorch/lib/*.so* $out/lib/
 
-      wrapProgram $out/bin/asr \
-        --prefix LD_LIBRARY_PATH : $out/lib
-      wrapProgram $out/bin/asr-server \
-        --prefix LD_LIBRARY_PATH : $out/lib
-    ''}
+        wrapProgram $out/bin/asr \
+          --prefix LD_LIBRARY_PATH : $out/lib
+        wrapProgram $out/bin/asr-server \
+          --prefix LD_LIBRARY_PATH : $out/lib
+      ''}
 
-    runHook postInstall
-  '';
+      runHook postInstall
+    '';
 
-  meta = with lib; {
-    description = "Rust CLI and API server for Qwen3-ASR speech recognition";
-    homepage = "https://github.com/second-state/qwen3_asr_rs";
-    license = licenses.asl20;
-    maintainer = [ "jason@mcneil.dev" ];
-    platforms = builtins.attrNames assets;
-  };
-}
+    meta = with lib; {
+      description = "Rust CLI and API server for Qwen3-ASR speech recognition";
+      homepage = "https://github.com/second-state/qwen3_asr_rs";
+      license = licenses.asl20;
+      maintainer = ["jason@mcneil.dev"];
+      platforms = builtins.attrNames assets;
+    };
+  }
