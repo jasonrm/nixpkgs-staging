@@ -12,6 +12,8 @@ This repo uses **Jujutsu (`jj`)** instead of `git` for day-to-day work. Use `jj`
 
 New files must be tracked before `nix build` can see them (flakes only see tracked files). Run any `jj` command (e.g. `jj status`) to snapshot the working copy and auto-track new files before building.
 
+Commit descriptions for package updates use the format `package: oldver -> newver` (e.g. `grok-build: 0.2.3 -> 0.2.11`). Always pass `-m "..."` to `jj commit`, `jj describe`, and `jj new` — without it they open an editor.
+
 ## Build Commands
 
 ```bash
