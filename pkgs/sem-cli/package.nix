@@ -8,13 +8,13 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "sem";
-  version = "0.6.0";
+  version = "0.10.1";
 
   src = fetchFromGitHub {
     owner = "Ataraxy-Labs";
     repo = "sem";
     rev = "v${version}";
-    hash = "sha256-nYFhLMS8MTklAREFJ3A97Wx+XObzDEvfUr8MaotdKN8=";
+    hash = "sha256-ukz4sfgesGZ4nhUpF4vHjUJvEixutlli6KOxTvnUs3s=";
   };
 
   cargoLock = {
