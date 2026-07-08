@@ -5,16 +5,16 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "arcanum";
-  version = "0.7.2";
+  version = "0.7.3";
 
   src = fetchFromGitHub {
     owner = "bitnixdev";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-XyNeFCoi4cv6jP/4el0c5ZqXI5JyM4UBmVj+3Jc3OmE=";
+    hash = "sha256-rcjeYTmq7v+8NgB9HrQYJ+I2TgqM3c7qxMrPN2iY6Ws=";
   };
 
-  cargoHash = "sha256-T1BeOQcHAAbO36EsWZOutZT3xAAdDQtrR4ZnxMYXVYg=";
+  cargoHash = "sha256-tLbGbHVafq/8ztS7BfVXA9lOCWDdrEh5F8qnkzoR7Qg=";
 
   meta = with lib; {
     homepage = "https://github.com/bitnixdev/arcanum";
