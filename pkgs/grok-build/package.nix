@@ -3,21 +3,21 @@
   stdenv,
   fetchurl,
 }: let
-  version = "0.2.72";
+  version = "0.2.92";
 
   # macos-x86_64 (Intel) is not currently published by upstream; only Apple Silicon + Linux are provided.
   assets = {
     "aarch64-darwin" = {
       platform = "macos-aarch64";
-      hash = "sha256-lxweLoWwEZnKPMvALWyZVADpuZmJQy5aR30Ngs7J2gE=";
+      hash = "sha256-gMZUrucONpiZhw4ZgU+KPsAk3k8JTTLvkT9GsWX1i0A=";
     };
     "aarch64-linux" = {
       platform = "linux-aarch64";
-      hash = "sha256-OCTkTpbYwjeAMZLUd2VHPk2YWraCyBSDBwHCTfvOFpM=";
+      hash = "sha256-NO+irevLIPwWzWVMZeilDLQ8YC5o21H7DVlvOEaD5FI=";
     };
     "x86_64-linux" = {
       platform = "linux-x86_64";
-      hash = "sha256-175s8huhzHnuTLLW3SV5pLxloB3xeibgCOY9VTUf2Ug=";
+      hash = "sha256-9G/4dXav+xc0HucEpHyhL6aEvDHJ19N+w5WARggtMIY=";
     };
   };
 
