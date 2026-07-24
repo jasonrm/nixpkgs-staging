@@ -19,13 +19,13 @@
 in
   rustPlatform.buildRustPackage rec {
     pname = "phpantom-zed";
-    version = "0.8.0";
+    version = "0.9.0";
 
     src = fetchFromGitHub {
       owner = "PHPantom-dev";
       repo = "phpantom_lsp";
       rev = version;
-      hash = "sha256-00NAiPm3qqxyS1u1GPpJlgnBlUjDx9VmjK6oOwH8kcU=";
+      hash = "sha256-euWaFH40VHefZewUcKvsLwwHZP+GwfTN8kfuAkaABB8=";
     };
 
     # Only the Zed extension lives here; the rest of the repo is the LSP server
