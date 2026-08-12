@@ -1,3 +1,18 @@
+# Grok CLI (grok-build) — prebuilt binaries from x.ai
+#
+# Discover new versions (same mechanism as https://x.ai/cli/install.sh):
+#   curl -fsSL https://x.ai/cli/stable          # default channel → version string
+#   curl -fsSL https://x.ai/cli/alpha           # prerelease
+#   curl -fsSL https://x.ai/cli/enterprise      # enterprise channel
+# Fallback if x.ai is unreachable:
+#   curl -fsSL https://storage.googleapis.com/grok-build-public-artifacts/cli/stable
+#
+# Artifact URL pattern (used below):
+#   https://storage.googleapis.com/grok-build-public-artifacts/cli/grok-${version}-${platform}
+# Platforms: macos-aarch64, linux-aarch64, linux-x86_64
+# (macos-x86_64 is not published; primary host is also https://x.ai/cli/…)
+#
+# After bumping version, set each asset.hash to "" and rebuild to get the real hashes.
 {
   lib,
   stdenv,
