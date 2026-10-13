@@ -6,19 +6,18 @@
 }:
 python3Packages.buildPythonPackage rec {
   pname = "pyan3";
-  version = "2.6.0";
+  version = "2.9.0";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "Technologicat";
     repo = "pyan";
     rev = "v${version}";
-    hash = "sha256-yBanI1WpJ/16urULPWotHBMAYQO4orN6WxuTixupYFA=";
+    hash = "sha256-3bP29C37W21nI7kIQW2jy0c04wyXZrCNNxdmGNluMNM=";
   };
 
   build-system = with python3Packages; [
-    setuptools
-    wheel
+    pdm-backend
   ];
 
   dependencies = with python3Packages; [
