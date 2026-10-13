@@ -69,7 +69,7 @@
         imports = nixosModules;
       };
       # Compose rust-overlay in first so packages that need a custom rust
-      # toolchain (e.g. phpantom-zed, which builds a wasm32-wasip2 component)
+      # toolchain (e.g. drm-exporter, which requires a recent Rust release)
       # can pull `rust-bin` from the package set. Mirrors nixosModules.default.
       overlays.default = nixpkgs.lib.composeExtensions
         rust-overlay.overlays.default
