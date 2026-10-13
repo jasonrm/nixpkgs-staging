@@ -14,22 +14,18 @@
 in
   rustPlatform.buildRustPackage rec {
     pname = "drm-exporter";
-    version = "0.3.1";
+    version = "0.3.4";
 
     src = fetchFromGitHub {
       owner = "home-operations";
       repo = "drm-exporter";
       rev = version;
-      hash = "sha256-CenwDf4Wp/HsNSBreXuckXlpr6pIgJQda7rgYHCk2uY=";
+      hash = "sha256-rJjUSE6CezWfSJaMOetDynROaB5PlPowwNq9JyRGNcI=";
     };
 
-    cargoHash = "sha256-UKRmZQuY+PHityVJwREdNpdQIVs351Y4jbO6IsKhUIM=";
+    cargoHash = "sha256-0V7/U1bGRdCzts3idI/EZrHTBIy9WPlS14q7y5j3hx0=";
 
     env.DRM_EXPORTER_VERSION = version;
-
-    postPatch = ''
-      substituteInPlace Cargo.toml --replace-fail 'rust-version = "1.97.0"' 'rust-version = "1.95.0"'
-    '';
 
     nativeBuildInputs = [pkg-config];
     buildInputs = [udev];
