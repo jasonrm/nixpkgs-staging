@@ -8,13 +8,13 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "anydoc";
-  version = "0.1.9";
+  version = "0.2.4";
 
   src = fetchFromGitHub {
     owner = "firecrawl";
     repo = "anydoc";
     rev = "v${version}";
-    hash = "sha256-DT20MO65NOVjxIEjAACCOLketD7bS5kWjq/ubjlIrhA=";
+    hash = "sha256-rGv3Bh+zmF9xFUgf8RaSmfyB/gfuQ13iC389i6VZIlM=";
   };
 
   cargoLock.lockFile = "${src}/Cargo.lock";
