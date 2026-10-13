@@ -1,22 +1,24 @@
 {
   lib,
-  buildGoModule,
+  buildGo127Module,
   fetchFromGitHub,
   makeWrapper,
 }:
-buildGoModule rec {
+buildGo127Module rec {
   pname = "supervisord-go";
-  version = "16cb640325b3a4962b2ba17d68fb5c2b1e1b6b3c";
+  version = "0.7.6";
 
   nativeBuildInputs = [makeWrapper];
 
   src = fetchFromGitHub {
     owner = "ochinchina";
     repo = "supervisord";
-    rev = version;
-    hash = "sha256-NPlU2f+zXw1qHWKTyTghQmulDuphpLZ3K/Pr/K9J7KI=";
+    rev = "v${version}";
+    hash = "sha256-l0cbkrX5Mj92IZCEeirySrvyUOvRWNJaC4W0EYBqWP0=";
   };
 
+  # Build the root module; its go.mod already replaces the local XML-RPC module.
+  env.GOWORK = "off";
   subPackages = ["."];
 
   installPhase = ''
@@ -26,7 +28,7 @@ buildGoModule rec {
     wrapProgram $out/bin/supervisord --run "cd $out/share/supervisord"
   '';
 
-  vendorHash = "sha256-W/68Kq5Z9+7fUKQGq1/hI12pLznlKRYw7x464ZJVxtM=";
+  vendorHash = "sha256-THsTIXFYZR7Gtr2nT/tZZqbxJgylMme1Ik+9hHGskIc=";
 
   meta = with lib; {
     description = "a go-lang supervisor implementation";
