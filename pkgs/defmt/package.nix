@@ -5,19 +5,15 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "defmt";
-  version = "0.3.10";
+  version = "1.1.1";
 
   src = fetchFromGitHub {
     owner = "knurling-rs";
     repo = pname;
     fetchSubmodules = true;
     rev = "defmt-v${version}";
-    hash = "sha256-WmfvJEuMYrwlrrLzyZSTIiOgKE43dgOdrf5mfMVNljI=";
-    # hash = lib.fakeHash;
+    hash = "sha256-hTn1mpKKnNPVGKFo71C4t6Ewv8rikQXWciSV0t8Ti78=";
   };
-
-  # cargoHash = "sha256-Wr67t+jKmcwmFmOGrsgAgeQsEQ1P0XAENekZmXFbk8g=";
-  # cargoHash = lib.fakeHash;
 
   doCheck = false;
   cargoBuildFlags = [
@@ -25,13 +21,7 @@ rustPlatform.buildRustPackage rec {
     "defmt-print"
   ];
 
-  postPatch = ''
-    ln -s ${./Cargo.lock} Cargo.lock
-  '';
-
-  cargoLock = {
-    lockFile = ./Cargo.lock;
-  };
+  cargoLock.lockFile = "${src}/Cargo.lock";
 
   meta = {
     homepage = "https://github.com/knurling-rs/${pname}";
