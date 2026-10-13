@@ -5,13 +5,13 @@
 }:
 buildGoModule rec {
   pname = "sql-tap";
-  version = "0.3.0";
+  version = "0.3.2";
 
   src = fetchFromGitHub {
     owner = "mickamy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-3c3cG5XPxZXebE27PssHX09AwhsyyHgYsgjh1rmM91k=";
+    hash = "sha256-jCxivoQHmmOKlesHiyCJRqm25N6SCmMIJQDDs0kA5Zg=";
   };
 
   vendorHash = "sha256-zf3NxbxX8X2/ZHBDjbp+cPOviODLTTDrY1LW//3lSDk=";
