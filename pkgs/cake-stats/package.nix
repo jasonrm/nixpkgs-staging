@@ -5,13 +5,13 @@
 }:
 buildGoModule rec {
   pname = "cake-stats";
-  version = "1.0.29";
+  version = "1.0.30";
 
   src = fetchFromGitHub {
     owner = "galpt";
     repo = "cake-stats";
     rev = "v${version}";
-    hash = "sha256-v5Dtc2C5r/m6zMq0aOh/okNHMectIGiO7i6cBGkMfc8=";
+    hash = "sha256-958WMfpOlXTpUg9zoI8+u9iZA9dBpg3JrpA7frdXgCs=";
   };
 
   vendorHash = "sha256-u+xkJr20c+H1ayiT0cITRjZSlnYHfW987Rg7Y0DJwxQ=";
