@@ -45,15 +45,15 @@
             finalAttrs:
               resolvedArgs finalAttrs
               // {
-                version = "0.1.6.2";
+                version = "0.1.6.3";
                 src = pkgs.fetchFromGitHub {
                   owner = "jasonrm";
                   repo = "yubikey-agent";
-                  rev = "v0.1.6.2";
-                  hash = "sha256-T/TpshANaV6Nsd5VainGXdm98LzB5O3tTDPBxY+3k+M=";
+                  rev = "dc00d22f";
+                  hash = "sha256-SmsMGUqkIQ9us3je8/nNV83M6MO5DyZscAw3nOVEZQc=";
                 };
 
-                vendorHash = "sha256-V0ztKsSGzlFc45AcCIEPiEgcWNsKE6u/KMbp8Z+zB8U=";
+                vendorHash = "sha256-tzeeqRgcCAOAFiHHotFkBuW5OEUHmIVvbnXSzycQldQ=";
               }
           );
       };
